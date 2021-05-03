@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Personal Website{% endblock %}
+
+{% block body %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+
+<body>
+  <h1>{{ session.get('username') }}, a web developer and designer</h1>
+
+  <div class="maincontainer-top">
+    <div id="about-div">About
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+           
+
+    <div id="experience-div">Experience
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+  </div>
+
+
+  <div class="maincontainer-middle">
+    <div id="project-div">Project
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+            
+    <div id="skill-div">Skill
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+  </div>
+
+
+  <div class="maincontainer-bottom">
+    <div id="education-div">Education
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+            
+    <div id="contact-div">Contact
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>     
+    </div>
+  </div>
+
+
+
+  <div class="build-div">Build Your Own</div>
+  
+
+</body>
+
+{% endblock %}
+
+{% block js %}
+	<!-- <script src="/static/js/homepage.jsx" type="text/jsx"></script> -->
+{% endblock %}

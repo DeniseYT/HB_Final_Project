@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}Build Your Own{% endblock %}
+
+{% block body %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    
+    <script 
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+</head>
+
+
+
+<h1>Build Your Own Website From Here</h1>
+
+<div class="maincontainer-top">
+    <div id="about-div">
+        <div>About</div>
+        <form>
+            <textarea id="about" type="text" name="about"></textarea>
+        </form>
+    
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+
+           
+
+    <div id="experience-div">
+        <div>Experience</div>
+        <form>
+            <textarea id="experience" type="text" name="experience"></textarea>
+        </form>
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+</div>
+
+
+<div class="maincontainer-middle">
+    <div id="project-div">
+        <div>Project</div>
+        <form>
+            <textarea id="project" type="text" name="project"></textarea>
+        </form>
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+            
+    <div id="skill-div">
+        <div>Skill</div>
+        <form>
+            <textarea id="skill" type="text" name="skill"></textarea>
+        </form>
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+</div>
+
+
+<div class="maincontainer-bottom">
+    <div id="education-div">
+        <div>Education</div>
+        <form>
+            <textarea id="education" type="text" name="education"></textarea>
+        </form>
+        <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>
+    </div>
+            
+    <div id="contact-div">
+        <div>Contact</div>
+        
+        <!-- <div id="like-div">Like</div>
+        <div id="comment-div">Comment</div>      -->
+    </div>
+    <form>
+        <textarea id="contact" type="text" name="contact"></textarea>
+    </form>
+</div>
+
+
+<input id="submit" type="Submit">
+
+<script src="/static/js/build_your_own_ajax.js"></script>
+
+{% endblock body%}

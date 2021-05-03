@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block body %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+
+<div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        </div>
+        <div class="social-icons">
+            <img src="gp.png">
+        </div>
+
+        <form action="/account" method="POST" id="login" class="input-group">
+            <input type="text" class="input-field" placeholder="User Name" required>
+            <input type="text" class="input-field" placeholder="Email" required>
+            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button type="submit" class="submit-btn">Log in</button>
+        </form>
+
+        <form action="/account" method="POST" id="register" class="input-group">
+            <input type="text" class="input-field" placeholder="User Name" required>
+            <input type="text" class="input-field" placeholder="Email" required>
+            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
+    <script>
+        const x = document.getElementById("login");
+        const y = document.getElementById("register");
+        const z = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+    </script>
+    
+</div>
+
+
+{% endblock body%}
