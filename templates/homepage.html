@@ -1,63 +1,93 @@
 {% extends 'base.html' %}
-{% block title %}Personal Website{% endblock %}
+
+{% block title %} Personal Website {% endblock %}
 
 {% block body %}
 
 <head>
     <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+    crossorigin="anonymous"></script>
+
 </head>
 
-<body>
-  <h1>{{ session.get('username') }}, a web developer and designer</h1>
+<h1>Personal Website</h1>
 
-  <div class="maincontainer-top">
-    <div id="about-div">About
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
+
+<div class="maincontainer-top">
+    <div id="about-div">
+        <div>About</div>
+        <form action="/build" method="POST">
+            <textarea id="about" type="text" name="about"></textarea>
+            
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
+        </form>
     </div>
+
            
 
-    <div id="experience-div">Experience
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
+    <div id="experience-div">
+        <div>Experience</div>
+        <form action="/build" method="POST">
+            <textarea id="experience" type="text" name="experience"></textarea>
+            
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
+        </form>
     </div>
-  </div>
+</div>
 
 
-  <div class="maincontainer-middle">
-    <div id="project-div">Project
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
+<div class="maincontainer-middle">
+    <div id="project-div">
+        <div>Project</div>
+        <form action="/build" method="POST">
+            <textarea id="project" type="text" name="project"></textarea>
+            
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
+        </form>
     </div>
             
-    <div id="skill-div">Skill
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
+    <div id="skill-div">
+        <div>Skill</div>
+        <form action="/build" method="POST">
+            <textarea id="skill" type="text" name="skill"></textarea>
+            
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
+        </form>
     </div>
-  </div>
+</div>
 
 
-  <div class="maincontainer-bottom">
-    <div id="education-div">Education
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
+<div class="maincontainer-bottom">
+    <div id="education-div">
+        <div>Education</div>
+        <form action="/build" method="POST">
+            <textarea id="education" type="text" name="education"></textarea>
+            
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
+        </form>
+        <h3 id="contact-show">input content goes here</h3>
     </div>
             
-    <div id="contact-div">Contact
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>     
+    <div id="contact-div">
+        <div>Contact</div>
+        <form action="/build" method="POST">
+            <textarea id="contact" type="text" name="contact"></textarea>
+            
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
+        </form>
+        <h3 id="contact-show">content</h3>
     </div>
-  </div>
 
+</div>
 
-
-  <div class="build-div">Build Your Own</div>
-  
-
-</body>
-
-{% endblock %}
-
-{% block js %}
-	<!-- <script src="/static/js/homepage.jsx" type="text/jsx"></script> -->
-{% endblock %}
+{% endblock body%}

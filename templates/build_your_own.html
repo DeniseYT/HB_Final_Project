@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Build Your Own{% endblock %}
+{% block title %} Build Your Own {% endblock %}
 
 {% block body %}
 
@@ -14,16 +14,18 @@
 
 </head>
 
+<body>
+    <h1 id="username"> {{ user[0] }}, a web developer and designer</h1>
+</body>
 
 
-<h1 class="colorChange">Build Your Own Website From Here</h1>
 
 <div class="maincontainer-top">
     <div id="about-div">
         <div>About</div>
         <form action="/build" method="POST">
             <textarea id="about" type="text" name="about"></textarea>
-            <button id="submit-btn" type="submit">Submit</button>
+            <!-- <button id="submit-btn" type="submit">Submit</button> -->
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
         </form>
@@ -35,7 +37,7 @@
         <div>Experience</div>
         <form action="/build" method="POST">
             <textarea id="experience" type="text" name="experience"></textarea>
-            <button id="submit-btn" type="submit">Submit</button>
+            <!-- <button id="submit-btn" type="submit">Submit</button> -->
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
         </form>
@@ -48,7 +50,7 @@
         <div>Project</div>
         <form action="/build" method="POST">
             <textarea id="project" type="text" name="project"></textarea>
-            <button id="submit-btn" type="submit">Submit</button>
+            <!-- <button id="submit-btn" type="submit">Submit</button> -->
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
         </form>
@@ -58,7 +60,7 @@
         <div>Skill</div>
         <form action="/build" method="POST">
             <textarea id="skill" type="text" name="skill"></textarea>
-            <button id="submit-btn" type="submit">Submit</button>
+            <!-- <button id="submit-btn" type="submit">Submit</button> -->
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
         </form>
@@ -71,7 +73,7 @@
         <div>Education</div>
         <form action="/build" method="POST">
             <textarea id="education" type="text" name="education"></textarea>
-            <button id="submit-btn" type="submit">Submit</button>
+            <!-- <button id="submit-btn" type="submit">Submit</button> -->
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
         </form>
@@ -82,11 +84,16 @@
         <div>Contact</div>
         <form action="/build" method="POST">
             <textarea id="contact" type="text" name="contact"></textarea>
-            <button id="submit-btn" type="submit">Submit</button>
+            <!-- <button id="submit-btn" type="submit">Submit</button> -->
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
         </form>
-        <h3 id="contact-show"></h3>
+        <h3 id="contact-show">{{ session.get("content") }}</h3>
+    </div>
+    <div>
+        <form action="/build" method="POST">
+            <button id="submit-btn" type="submit">Submit</button>
+        </form>
     </div>
 
    

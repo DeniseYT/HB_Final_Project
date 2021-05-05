@@ -36,7 +36,10 @@ def get_user_by_email(email):
 # for account register/login
 def get_user_by_id(user_id):
     """Return a user by their primary key"""
+    
     return User.query.get(user_id)
+    # return User.query.filter_by(user_id=user_id).one()
+    # return User.query.filter_by(user_id=user_id).first()
 
 
 def create_profile(about, experience, skill, project, education, contact, user_id):
@@ -57,21 +60,32 @@ def create_profile(about, experience, skill, project, education, contact, user_i
     return profile
 
 
-def get_profiles():
+def get_all_contents():
     """Return all profiles."""
 
     return Profile.query.all()
 
+def get_profile_by_id(profile_id):
+    """Return a profile by their profile_id."""
+    
+    return Profile.query.filter_by(profile_id=profile_id).one()
+    # return Profile.query.filter_by(profile_id=profile_id).first()
 
-def create_comment(profile_id, comment, like):
+
+def create_comment(comment, like, profile_id):
     """Create and return a new comment."""
 
-    comment = Comment(profile_id=profile_id, comment=comment, like=like)
+    comment = Comment(comment=comment, like=like, profile_id=profile_id)
 
     db.session.add(comment)
     db.session.commit()
 
     return comment
+
+
+def get_comment_by_id(user_id):
+    """Return a comment by their user_id."""
+    return Profile.query.filter_by(user_id=user_id).all()
 
 
 # Functions start here!

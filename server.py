@@ -15,9 +15,6 @@ app.jinja_env.undefined = StrictUndefined
 def homepage():
     """View homepage."""
 
-    if 'username' in session:
-        username = session['username'] 
-
     return render_template('homepage.html')
 
 
@@ -26,16 +23,24 @@ def homepage():
 def build_new():
     """Build a new content."""
 
-    return render_template('build_your_own.html')
-    # return render_template('build_your_own.html', profile=profile)
+    # username = session.get("username")
+    # username = "Denise"
+    user = crud.get_users()
+    # user = crud.get_user_by_username(username)
+    # content = "about something"
+    # content = session.get("content")
+
+    return render_template('build_your_own.html', user=user)
+
 
 
 @app.route('/build/<int:user_id>')
 def show_content(user_id):
 
     user_id = crud.get_user_by_id(user_id)
-    
-    return render_template('build_your_own.html') 
+    # username = User.query.filter(User.username == username).first()
+
+    return render_template('build_your_own.html', user_id=user_id)
 
 
 # # for showing on url
@@ -80,13 +85,34 @@ def build_new_content():
                                   contact=contact,
                                   user_id=user_id)
     
+    # all_contents = crud.get_profile_contents()
+    
+    # result = list()
+    # for content in profile:
+    #     profile = crud.create_profile(about=about,
+    #                                     experience=experience,
+    #                                     skill=skill,
+    #                                     project=project,
+    #                                     education=education,
+    #                                     contact=contact,
+    #                                     user_id=user_id)
+    #     result.append({
+    #         "about": about,
+    #         "experience": experience,
+    #         "skill": skill,
+    #         "project": project,
+    #         "education": education,
+    #         "contact": contact,
+    #         # "user_id": user_id
+    #     })
     
     flash("Your profile has been added")
-    return redirect("/build")
+    return render_template('build_your_own.html')
+    # return render_template('build_your_own.html', result=result)
     
 
 
-@app.route('/users')
+@app.route('/account')
 def all_users():
     """View all users."""
 
@@ -103,7 +129,7 @@ def all_users():
 #     return render_template('account.html', user=user)
 
 
-@app.route('/users', methods=['POST'])
+@app.route('/account', methods=['POST'])
 def register_users():
     """Create a new user."""
 
@@ -118,7 +144,7 @@ def register_users():
     if user:
         flash('Email has already taken. Try again')
         
-        return redirect('/users')
+        return redirect('/account')
 
    
     else:
@@ -149,7 +175,42 @@ def user_login():
         return redirect('/users')
 
 
-    
+# @app.route("/add_comment", methods=['POST'])
+# def add_comment():
+#     """User adding a comment to a profile"""
+
+#     user_id = session.get("user_id")
+#     profile_id = request.form.get("profile_id")
+#     comment = request.form.get("comment")
+
+
+#     profile = crud.get_blog_by_id(profile_id)
+
+#     add_comment = crud.create_comment(comment=comment, like=like, prodile_id=profile_id)
+
+#     flash("Your Comment has been added")
+
+#     return redirect('/build')
+    # return redirect('/build/<username>')
+
+
+# @app.route("/add_like", methods=['POST'])
+# def add_comment():
+#     """User adding a like to a profile"""
+
+#     user_id = session.get("user_id")
+#     profile_id = request.form.get("profile_id")
+#     like = request.form.get("like")
+
+#     profile = crud.get_blog_by_id(profile_id)
+
+#     add_like = crud.create_comment(comment=comment, like=like, prodile_id=profile_id)
+
+#     flash("You like it")
+
+#     return redirect('/build')
+    # return redirect('/build/<username>')
+ 
 
 
 

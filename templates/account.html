@@ -4,35 +4,56 @@
 {% block body %}
   
   <h2>Create an Account</h2>
-  <form action="/users" method="POST">
+  <form action="/account" method="POST">
     <p>
-      Username <input type="text" name="username">
+      Username <input type="text" name="username" required>
     </p>
     <p>
-      Email <input type="text" name="email">
+      Email <input type="text" name="email" required>
     </p>
     <p>
-      Password <input type="password" name="password">
+      Password <input type="password" name="password" required>
     </p>
 
     <p>
-      <input type="submit">
+      <button id="signup-btn" type="submit">Register</button>
     </p>
   </form>
+
+  <!-- <script>
+    "use strict";
+    const submittion = document.querySelector('#signup-btn');
+    submittion.addEventListener('click', () => {
+      // evt.preventDefault();
+      alert('Your account has been created.')
+    });
+</script> -->
   
 
   <h2>Login to your Account</h2>
   <form action="/login" method="POST">
     <p>
-      Email <input type="text" name="email">
+      Email <input type="text" name="email" required>
     </p>
     <p>
-      Password <input type="password" name="password">
+      Password <input type="password" name="password" required>
     </p>
 
-    <p>
-      <input type="submit">
-    </p>
+    <!-- <p>
+      <button id="signin-btn" type="submit">LET'S GO</button>
+    </p> -->
+    <form action="/account" method="POST">
+      <button id="login-btn" type="submit">Log In</button>
   </form>
+  </form>
+
+  <!-- <script>
+    "use strict";
+    const submittion = document.querySelector('#login-btn');
+    submittion.addEventListener('click', () => {
+      // evt.preventDefault();
+      alert('Logged in successfully!')
+    });
+</script> -->
 
 {% endblock %}
