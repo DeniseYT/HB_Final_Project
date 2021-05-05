@@ -24,9 +24,33 @@
 // $('#submit').on('submit', formInputs);
 
 
+// JS + AJAX
+// document.querySelector('#contact')
+//     .addEventListener('submit', (evt) => {
+//         evt.preventDefault();
+
+//         const formInputs = 
+//         document.querySelector('#about').value;
+//         document.querySelector('#experience').value;
+//         document.querySelector('#project').value;
+//         document.querySelector('#skill').value;
+//         document.querySelector('#education').value;
+//         document.querySelector('#contact').value;
+
+//         $.post('/build', formInputs, (res) => {
+//             document.querySelector('#about-div').innerHTML = res.about;
+//             document.querySelector('#experience-div').innerHTML = res.experience;
+//             document.querySelector('#project-div').innerHTML = res.project;
+//             document.querySelector('#skill-div').innerHTML = res.skill;
+//             document.querySelector('#education-div').innerHTML = res.education;
+//             document.querySelector('#contact-div').innerHTML = res.contact;
+//         });
+//     });
+
+
 // jQuery + AJAX
 $('#submit').on('submit', (evt) => {
-    evt.preventDefault();
+    // evt.preventDefault();
 
     const formInputs = {
         'about': $('#about').val(),
@@ -38,12 +62,13 @@ $('#submit').on('submit', (evt) => {
     };
 
     $.post('/build', formInputs, (res) => {
-        $('#about-div').html(res.about);
-        $('#experience-div').html(res.experience);
-        $('#project-div').html(res.project);
-        $('#skill-div').html(res.skill);
-        $('#education-div').html(res.education);
-        $('#contact-div').html(res.contact);
+        alert(res);
+        // $('#about-div').html(res.about);
+        // $('#experience-div').html(res.experience);
+        // $('#project-div').html(res.project);
+        // $('#skill-div').html(res.skill);
+        // $('#education-div').html(res.education);
+        // $('#contact-div').html(res.contact);
     });
 });
 

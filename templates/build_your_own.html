@@ -6,37 +6,39 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
-    
+
     <script 
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
     crossorigin="anonymous"></script>
+
 </head>
 
 
 
-<h1>Build Your Own Website From Here</h1>
+<h1 class="colorChange">Build Your Own Website From Here</h1>
 
 <div class="maincontainer-top">
     <div id="about-div">
         <div>About</div>
-        <form>
+        <form action="/build" method="POST">
             <textarea id="about" type="text" name="about"></textarea>
+            <button id="submit-btn" type="submit">Submit</button>
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
         </form>
-    
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
     </div>
 
            
 
     <div id="experience-div">
         <div>Experience</div>
-        <form>
+        <form action="/build" method="POST">
             <textarea id="experience" type="text" name="experience"></textarea>
+            <button id="submit-btn" type="submit">Submit</button>
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
         </form>
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
     </div>
 </div>
 
@@ -44,20 +46,22 @@
 <div class="maincontainer-middle">
     <div id="project-div">
         <div>Project</div>
-        <form>
+        <form action="/build" method="POST">
             <textarea id="project" type="text" name="project"></textarea>
+            <button id="submit-btn" type="submit">Submit</button>
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
         </form>
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
     </div>
             
     <div id="skill-div">
         <div>Skill</div>
-        <form>
+        <form action="/build" method="POST">
             <textarea id="skill" type="text" name="skill"></textarea>
+            <button id="submit-btn" type="submit">Submit</button>
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
         </form>
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
     </div>
 </div>
 
@@ -65,27 +69,48 @@
 <div class="maincontainer-bottom">
     <div id="education-div">
         <div>Education</div>
-        <form>
+        <form action="/build" method="POST">
             <textarea id="education" type="text" name="education"></textarea>
+            <button id="submit-btn" type="submit">Submit</button>
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
         </form>
-        <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>
+        <h3 id="contact-show">input content goes here</h3>
     </div>
             
     <div id="contact-div">
         <div>Contact</div>
-        
-        <!-- <div id="like-div">Like</div>
-        <div id="comment-div">Comment</div>      -->
+        <form action="/build" method="POST">
+            <textarea id="contact" type="text" name="contact"></textarea>
+            <button id="submit-btn" type="submit">Submit</button>
+            <button id="like-btn" type="like">Like</button>
+            <button id="comment-btn" type="comment">Comment</button> 
+        </form>
+        <h3 id="contact-show">contact info</h3>
     </div>
-    <form>
-        <textarea id="contact" type="text" name="contact"></textarea>
-    </form>
+
+   
+    <script>
+        "use strict";
+        const submittion = document.querySelector('#submit-btn');
+        submittion.addEventListener('click', () => {
+            alert('Form submit')
+        });
+    </script>
 </div>
 
 
-<input id="submit" type="Submit">
 
-<script src="/static/js/build_your_own_ajax.js"></script>
+<!-- <button id="color">Change Color</button>
+<script>
+    "use strict";
+    const button = document.querySelector('#color');
+    button.addEventListener('click', () => {
+        alert('Change color')
+    });
+</script> -->
+
+
+<!-- <script src="/static/js/build_your_own_ajax.js"></script> -->
 
 {% endblock body%}

@@ -21,11 +21,21 @@ def homepage():
     return render_template('homepage.html')
 
 
+
 @app.route('/build')
 def build_new():
     """Build a new content."""
 
     return render_template('build_your_own.html')
+
+
+@app.route('/build/<int:user_id>')
+def show_content(user_id):
+
+    user_id = crud.get_user_by_id(user_id)
+    
+    return render_template('build_your_own.html') 
+
 
 # # for showing on url
 # @app.route('/build/<username>')
@@ -67,12 +77,10 @@ def build_new_content():
                                   education=education,
                                   contact=contact)
     
+   
     flash("Your profile has been added")
-    # flash("Your profile has been added", profile=profile)
-
     return redirect("/build")
-
-
+    
 
 
 @app.route('/users')

@@ -11,11 +11,12 @@ class User(db.Model):
     __tablename__ = 'users'
 
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    username = db.Column(db.String)
-    email = db.Column(db.String, unique=True)
-    password = db.Column(db.String)
+    username = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(20), unique=True, nullable=False)
+    password = db.Column(db.String(20), nullable=False)
 
-    # comments = a list of comment objects
+    # Need this line?
+    # profile = db.relationship('Profile', backref='users')
 
     def __repr__(self):
         return f'<User user_id={self.user_id} email={self.email}>'
@@ -27,16 +28,17 @@ class Profile(db.Model):
     __tablename__ = 'profiles'
 
     profile_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    about = db.Column(db.Text)
-    experience = db.Column(db.Text)
-    skill = db.Column(db.Text)
-    project = db.Column(db.Text)
-    education = db.Column(db.Text)
-    contact = db.Column(db.Text)
+    about = db.Column(db.Text, nullable=True)
+    experience = db.Column(db.Text, nullable=True)
+    skill = db.Column(db.Text, nullable=True)
+    project = db.Column(db.Text, nullable=True)
+    education = db.Column(db.Text, nullable=True)
+    contact = db.Column(db.Text, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id')) 
     # because one user has one profile, so we connect two tables
 
-    # comments = a list of comment objects
+    # Need this line?
+    user = db.relationship('User', backref='profiles')
 
     def __repr__(self):
         return f'<Profile profile_id={self.profile_id} about={self.about}>'
@@ -48,9 +50,9 @@ class Comment(db.Model):
     __tablename__ = 'comments'
 
     comment_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    comment = db.Column(db.String)
-    like = db.Column(db.Integer)
-    # user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    comment = db.Column(db.String, nullable=True)
+    like = db.Column(db.Integer, nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     profile_id = db.Column(db.Integer, db.ForeignKey('profiles.profile_id'))
 
     user = db.relationship('User', backref='comments')

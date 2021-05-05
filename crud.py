@@ -54,10 +54,10 @@ def create_profile(about, experience, skill, project, education, contact):
     return profile
 
 
-# def get_profiles():
-#     """Return all users."""
+def get_profiles():
+    """Return all profiles."""
 
-#     return Profile.query.all()
+    return Profile.query.all()
 
 
 def create_comment(user, profile, comment, like):
