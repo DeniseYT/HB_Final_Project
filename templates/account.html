@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}Movie Ratings Home{% endblock %}
+{% block title %}Account{% endblock %}
 
 {% block body %}
   
   <h2>Create an Account</h2>
   <form action="/users" method="POST">
     <p>
+      Username <input type="text" name="Username">
+    </p>
+    <p>
       Email <input type="text" name="email">
     </p>
-
     <p>
       Password <input type="password" name="password">
     </p>
@@ -24,7 +26,6 @@
     <p>
       Email <input type="text" name="email">
     </p>
-
     <p>
       Password <input type="password" name="password">
     </p>

@@ -27,6 +27,7 @@ def build_new():
     """Build a new content."""
 
     return render_template('build_your_own.html')
+    # return render_template('build_your_own.html', profile=profile)
 
 
 @app.route('/build/<int:user_id>')
@@ -69,15 +70,17 @@ def build_new_content():
     skill = request.form.get("skill")
     education = request.form.get("education")
     contact = request.form.get("contact")
+    user_id = session.get("user_id")
 
     profile = crud.create_profile(about=about,
                                   experience=experience,
                                   skill=skill,
                                   project=project,
                                   education=education,
-                                  contact=contact)
+                                  contact=contact,
+                                  user_id=user_id)
     
-   
+    
     flash("Your profile has been added")
     return redirect("/build")
     
@@ -104,19 +107,24 @@ def all_users():
 def register_users():
     """Create a new user."""
 
+    username = request.form.get('username')
     email = request.form.get('email')
     password = request.form.get('password')
 
-    # flash not shows up
-    if crud.get_user_by_email(email) == email:
-        flash('You can’t create an account with that email. Try again')
+    user = crud.get_user_by_email(email)
 
-    # working fine
+
+    if user:
+        flash('Email has already taken. Try again')
+        
+        return redirect('/users')
+
+   
     else:
-        crud.create_user(email, password)
+        crud.create_user(username, email, password)
         flash('Your account has been created.')
 
-    return redirect('/build')
+        return redirect('/build')
 
 
 @app.route('/login', methods=['POST'])
@@ -126,15 +134,15 @@ def user_login():
     input_email = request.form.get('email')
     input_password = request.form.get('password')
 
-    user = get_user_by_email(input_email)
+    user = crud.get_user_by_email(input_email)
 
-    # working fine
+
     if user and user.password == input_password:
         session['user'] = user.user_id
         flash('Logged in.')
         return redirect('/build')
     
-    # working fine
+   
     else:
         flash('incorrect login')
         return redirect('/users')

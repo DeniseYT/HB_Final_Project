@@ -34,6 +34,7 @@ class Profile(db.Model):
     project = db.Column(db.Text, nullable=True)
     education = db.Column(db.Text, nullable=True)
     contact = db.Column(db.Text, nullable=True)
+
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id')) 
     # because one user has one profile, so we connect two tables
 
@@ -52,10 +53,10 @@ class Comment(db.Model):
     comment_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     comment = db.Column(db.String, nullable=True)
     like = db.Column(db.Integer, nullable=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    # user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     profile_id = db.Column(db.Integer, db.ForeignKey('profiles.profile_id'))
 
-    user = db.relationship('User', backref='comments')
+    # user = db.relationship('User', backref='comments')
     profile = db.relationship('Profile', backref='comments')
 
     def __repr__(self):

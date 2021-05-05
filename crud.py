@@ -3,10 +3,10 @@
 from model import db, User, Profile, Comment, connect_to_db
 
 
-def create_user(email, password):
+def create_user(username, email, password):
     """Create and return a new user."""
 
-    user = User(email=email, password=password)
+    user = User(username=username, email=email, password=password)
 
     db.session.add(user)
     db.session.commit()
@@ -25,6 +25,7 @@ def get_user_by_username(username):
     """Return a user by username."""
 
     return User.query.get(username)
+    # return User.query.filter(User.username == username).first()
 
 # for account register/login
 def get_user_by_email(email):
@@ -38,7 +39,7 @@ def get_user_by_id(user_id):
     return User.query.get(user_id)
 
 
-def create_profile(about, experience, skill, project, education, contact):
+def create_profile(about, experience, skill, project, education, contact, user_id):
     """Create and return a new profile."""
 
     profile = Profile(about=about,
@@ -46,7 +47,9 @@ def create_profile(about, experience, skill, project, education, contact):
                       skill=skill,
                       project=project,
                       education=education,
-                      contact=contact)
+                      contact=contact,
+                      user_id=user_id)
+                
 
     db.session.add(profile)
     db.session.commit()
@@ -60,10 +63,10 @@ def get_profiles():
     return Profile.query.all()
 
 
-def create_comment(user, profile, comment, like):
+def create_comment(profile_id, comment, like):
     """Create and return a new comment."""
 
-    comment = Comment(user=user, profile=profile, comment=comment, like=like)
+    comment = Comment(profile_id=profile_id, comment=comment, like=like)
 
     db.session.add(comment)
     db.session.commit()
