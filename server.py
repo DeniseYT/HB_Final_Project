@@ -111,7 +111,8 @@ def register_users():
     email = request.form.get('email')
     password = request.form.get('password')
 
-    user = crud.get_user_by_email(email)
+    # user = crud.get_user_by_email(email)
+    user = crud.get_user_by_username(username)
 
 
     if user:

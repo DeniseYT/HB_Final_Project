@@ -24,8 +24,8 @@ def get_users():
 def get_user_by_username(username):
     """Return a user by username."""
 
-    return User.query.get(username)
-    # return User.query.filter(User.username == username).first()
+    # return User.query.get(username)
+    return User.query.filter(User.username == username).first()
 
 # for account register/login
 def get_user_by_email(email):
