@@ -60,7 +60,7 @@ def create_profile(about, experience, skill, project, education, contact, user_i
     return profile
 
 
-def get_all_contents():
+def get_profile_contents():
     """Return all profiles."""
 
     return Profile.query.all()

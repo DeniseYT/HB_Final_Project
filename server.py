@@ -18,29 +18,47 @@ def homepage():
     return render_template('homepage.html')
 
 
+# When user completes their content, they have a whold new webpage
+@app.route('//<string:username>')
+def user_homepage(username):
+    """View user's homepage."""
+
+    return render_template('homepage.html')
+
+
 
 @app.route('/build')
 def build_new():
     """Build a new content."""
 
+    return render_template('build_your_own.html')
+
+
+@app.route('/build/<string:username>', methods=['POST'])
+def build_new_with_username(username):
+    """Build a new content."""
+
     # username = session.get("username")
     # username = "Denise"
-    user = crud.get_users()
-    # user = crud.get_user_by_username(username)
+    # user = crud.get_users()
+    # user = crud.get_user_by_username(username=username)
     # content = "about something"
     # content = session.get("content")
 
-    return render_template('build_your_own.html', user=user)
+    input_username = request.form.get('username')
+    username = crud.get_user_by_username(input_username)
+
+    return render_template('build_your_own.html', username=username)
 
 
 
-@app.route('/build/<int:user_id>')
-def show_content(user_id):
+# @app.route('/build/<int:user_id>')
+# def show_content(user_id):
 
-    user_id = crud.get_user_by_id(user_id)
-    # username = User.query.filter(User.username == username).first()
+#     user_id = crud.get_user_by_id(user_id)
+#     # username = User.query.filter(User.username == username).first()
 
-    return render_template('build_your_own.html', user_id=user_id)
+#     return render_template('build_your_own.html', user_id=user_id)
 
 
 # # for showing on url
@@ -109,6 +127,7 @@ def build_new_content():
     flash("Your profile has been added")
     return render_template('build_your_own.html')
     # return render_template('build_your_own.html', result=result)
+    # return redirect ('//<string:username>')
     
 
 
@@ -118,7 +137,7 @@ def all_users():
 
     users = crud.get_users()
 
-    return render_template('account.html', users=users)
+    return render_template('account.html')
 
 # @app.route('/users/<user_id>')
 # def user_details(user_id):
@@ -137,20 +156,17 @@ def register_users():
     email = request.form.get('email')
     password = request.form.get('password')
 
-    # user = crud.get_user_by_email(email)
-    user = crud.get_user_by_username(username)
-
+    user = crud.get_user_by_email(email)
 
     if user:
         flash('Email has already taken. Try again')
-        
         return redirect('/account')
 
-   
     else:
         crud.create_user(username, email, password)
+        user = crud.get_user_by_email(email)
+        session['user'] = user.username
         flash('Your account has been created.')
-
         return redirect('/build')
 
 
@@ -163,19 +179,17 @@ def user_login():
 
     user = crud.get_user_by_email(input_email)
 
-
     if user and user.password == input_password:
-        session['user'] = user.user_id
+        session['user'] = user.username
         flash('Logged in.')
         return redirect('/build')
-    
-   
+
     else:
         flash('incorrect login')
-        return redirect('/users')
+        return redirect('/account')
 
 
-# @app.route("/add_comment", methods=['POST'])
+# @app.route("/", methods=['POST'])
 # def add_comment():
 #     """User adding a comment to a profile"""
 
@@ -190,11 +204,10 @@ def user_login():
 
 #     flash("Your Comment has been added")
 
-#     return redirect('/build')
-    # return redirect('/build/<username>')
+#     return redirect('/')
 
 
-# @app.route("/add_like", methods=['POST'])
+# @app.route("/", methods=['POST'])
 # def add_comment():
 #     """User adding a like to a profile"""
 
@@ -208,8 +221,8 @@ def user_login():
 
 #     flash("You like it")
 
-#     return redirect('/build')
-    # return redirect('/build/<username>')
+#     return redirect('/')
+
  
 
 
