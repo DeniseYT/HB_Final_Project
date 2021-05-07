@@ -95,13 +95,26 @@ def build_new_content():
     contact = request.form.get("contact")
     user_id = session.get("user_id")
 
-    profile = crud.create_profile(about=about,
-                                  experience=experience,
-                                  skill=skill,
-                                  project=project,
-                                  education=education,
-                                  contact=contact,
-                                  user_id=user_id)
+    # profile = crud.create_profile(about=about,
+    #                               experience=experience,
+    #                               skill=skill,
+    #                               project=project,
+    #                               education=education,
+    #                               contact=contact,
+    #                               user_id=user_id)
+
+    # either one is fine
+    profile = crud.create_profile(about,
+                                  experience,
+                                  skill,
+                                  project,
+                                  education,
+                                  contact,
+                                  user_id)
+    
+    # working fine
+    session["profile"] = profile.about
+    
     
     # all_contents = crud.get_profile_contents()
     
