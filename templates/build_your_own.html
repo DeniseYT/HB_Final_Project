@@ -25,12 +25,12 @@
         <div id="about-div">
             <div>About</div>
             <!-- <form action="/build" method="POST"> -->
-                <textarea id="about" type="text" name="about"></textarea>
+                <textarea id="about" type="text" name="about" required></textarea>
                 
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
             <!-- </form> -->
-                <h3 id="about-show">{{ session.get("about") }}</h3>
+                <h3 id="about-show">{{ profile_about.about }}</h3>
         </div>
 
             
@@ -38,7 +38,7 @@
         <div id="experience-div">
             <div>Experience</div>
             <!-- <form action="/build" method="POST"> -->
-                <textarea id="experience" type="text" name="experience"></textarea>
+                <textarea id="experience" type="text" name="experience" required></textarea>
                 
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
@@ -52,7 +52,7 @@
         <div id="project-div">
             <div>Project</div>
             <!-- <form action="/build" method="POST"> -->
-                <textarea id="project" type="text" name="project"></textarea>
+                <textarea id="project" type="text" name="project" required></textarea>
                 
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
@@ -63,7 +63,7 @@
         <div id="skill-div">
             <div>Skill</div>
             <!-- <form action="/build" method="POST"> -->
-                <textarea id="skill" type="text" name="skill"></textarea>
+                <textarea id="skill" type="text" name="skill" required></textarea>
                
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
@@ -77,7 +77,7 @@
         <div id="education-div">
             <div>Education</div>
             <!-- <form action="/build" method="POST"> -->
-                <textarea id="education" type="text" name="education"></textarea>
+                <textarea id="education" type="text" name="education" required></textarea>
                 
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
@@ -89,7 +89,7 @@
         <div id="contact-div">
             <div>Contact</div>
             <!-- <form action="/build" method="POST"> -->
-                <textarea id="contact" type="text" name="contact"></textarea>
+                <textarea id="contact" type="text" name="contact" ></textarea>
                 
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 

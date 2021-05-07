@@ -31,7 +31,9 @@ def user_homepage(username):
 def build_new():
     """Build a new content."""
 
-    return render_template('build_your_own.html')
+    profile = crud.get_profile_contents()
+
+    return render_template('build_your_own.html', profile=profile)
 
 
 @app.route('/build/<string:username>', methods=['POST'])
@@ -82,6 +84,13 @@ def build_new_with_username(username):
 #     return redirect("/")
 
 
+# @app.route('/personal')
+# def personal_web():
+#     """View user's build in homepage."""
+
+#     return render_template('build_your_own_to_homepage.html')
+
+
 
 @app.route('/build', methods=['POST'])
 def build_new_content():
@@ -106,24 +115,24 @@ def build_new_content():
     # either one is fine
     profile = crud.create_profile(about,
                                   experience,
-                                  skill,
                                   project,
+                                  skill,
                                   education,
                                   contact,
                                   user_id)
     
-    # working fine
+    # # working fine
     profile_about = crud.get_profile_by_about(about)
-    session["about"] = profile_about.about
+    # session["about"] = profile_about.about
 
     profile_experience = crud.get_profile_by_experience(experience)
     session["experience"] = profile_experience.experience
 
-    profile_skill = crud.get_profile_by_skill(skill)
-    session["skill"] = profile_skill.skill
-
     profile_project = crud.get_profile_by_project(project)
     session["project"] = profile_project.project
+
+    profile_skill = crud.get_profile_by_skill(skill)
+    session["skill"] = profile_skill.skill
 
     profile_education = crud.get_profile_by_education(education)
     session["education"] = profile_education.education
@@ -131,36 +140,14 @@ def build_new_content():
     profile_contact = crud.get_profile_by_contact(contact)
     session["contact"] = profile_contact.contact
 
-    # profile_user_id = crud.get_profile_by_user_id(user_id)
-    # session["user_id"] = profile_user_id.user_id
 
-    
-    
-    # all_contents = crud.get_profile_contents()
-    
-    # result = list()
-    # for content in profile:
-    #     profile = crud.create_profile(about=about,
-    #                                     experience=experience,
-    #                                     skill=skill,
-    #                                     project=project,
-    #                                     education=education,
-    #                                     contact=contact,
-    #                                     user_id=user_id)
-    #     result.append({
-    #         "about": about,
-    #         "experience": experience,
-    #         "skill": skill,
-    #         "project": project,
-    #         "education": education,
-    #         "contact": contact,
-    #         # "user_id": user_id
-    #     })
-    
+    # input_username = request.form.get('username')
+    # user = crud.get_user_by_username(input_username)
+    # session["user"] = user.username
+
+
     flash("Your profile has been added")
-    return render_template('build_your_own.html')
-    # return render_template('build_your_own.html', result=result)
-    # return redirect ('//<string:username>')
+    return redirect ('/')
     
 
 

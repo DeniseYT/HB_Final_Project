@@ -21,10 +21,12 @@
     <div id="about-div">
         <div>About</div>
         <form action="/build" method="POST">
-            <textarea id="about" type="text" name="about"></textarea>
+            <!-- <textarea id="about" type="text" name="about"></textarea> -->
             
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
+    
+            <h3 id="about-show">{{ session.get("about") }}</h3>
         </form>
     </div>
 
@@ -33,10 +35,11 @@
     <div id="experience-div">
         <div>Experience</div>
         <form action="/build" method="POST">
-            <textarea id="experience" type="text" name="experience"></textarea>
+            <!-- <textarea id="experience" type="text" name="experience"></textarea> -->
             
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
+            <h3 id="about-show">{{ session.get("experience") }}</h3>
         </form>
     </div>
 </div>
@@ -46,20 +49,22 @@
     <div id="project-div">
         <div>Project</div>
         <form action="/build" method="POST">
-            <textarea id="project" type="text" name="project"></textarea>
+            <!-- <textarea id="project" type="text" name="project"></textarea> -->
             
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
+            <h3 id="about-show">{{ session.get("project") }}</h3>
         </form>
     </div>
             
     <div id="skill-div">
         <div>Skill</div>
         <form action="/build" method="POST">
-            <textarea id="skill" type="text" name="skill"></textarea>
+            <!-- <textarea id="skill" type="text" name="skill"></textarea> -->
             
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
+            <h3 id="about-show">{{ session.get("skill") }}</h3>
         </form>
     </div>
 </div>
@@ -69,23 +74,23 @@
     <div id="education-div">
         <div>Education</div>
         <form action="/build" method="POST">
-            <textarea id="education" type="text" name="education"></textarea>
+            <!-- <textarea id="education" type="text" name="education"></textarea> -->
             
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
         </form>
-        <h3 id="contact-show">input content goes here</h3>
+        <h3 id="about-show">{{ session.get("education") }}</h3>
     </div>
             
     <div id="contact-div">
         <div>Contact</div>
         <form action="/build" method="POST">
-            <textarea id="contact" type="text" name="contact"></textarea>
+            <!-- <textarea id="contact" type="text" name="contact"></textarea> -->
             
             <button id="like-btn" type="like">Like</button>
             <button id="comment-btn" type="comment">Comment</button> 
         </form>
-        <h3 id="contact-show">content</h3>
+        <h3 id="about-show">{{ session.get("contact") }}</h3>
     </div>
 
 </div>
