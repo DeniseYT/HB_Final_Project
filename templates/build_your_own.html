@@ -30,7 +30,7 @@
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
             <!-- </form> -->
-                <p> content </p>
+                <h3 id="about-show">{{ session.get("about") }}</h3>
         </div>
 
             
@@ -43,7 +43,7 @@
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
             <!-- </form> -->
-                <p> content </p>
+                <h3 id="experience-show">{{ session.get("experience") }}</h3>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
             <!-- </form> -->
-                <p> content </p>
+                <h3 id="project-show">{{ session.get("project") }}</h3>
         </div>
                 
         <div id="skill-div">
@@ -68,7 +68,7 @@
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
             <!-- </form> -->
-                <p> content </p>
+                <h3 id="skill-show">{{ session.get("skill") }}</h3>
         </div>
     </div>
 
@@ -82,8 +82,8 @@
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
             <!-- </form> -->
-                <h3 id="contact-show">{{ session.get("profile") }}</h3>
-                <p> content </p>
+                <h3 id="education-show">{{ session.get("education") }}</h3>
+                <!-- <p> content </p> -->
         </div>
                 
         <div id="contact-div">
@@ -94,7 +94,7 @@
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
             <!-- </form> -->
-            <h3 id="contact-show">{{ session.get("profile") }}</h3>
+            <h3 id="contact-show">{{ session.get("contact") }}</h3>
         </div>
         <div>
             <!-- <form action="/build" method="POST"> -->

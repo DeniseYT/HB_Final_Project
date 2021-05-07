@@ -65,6 +65,44 @@ def get_profile_contents():
 
     return Profile.query.all()
 
+
+def get_profile_by_about(about):
+    """Return a profile by about."""
+
+    return Profile.query.filter(Profile.about == about).first()
+
+
+def get_profile_by_experience(experience):
+    """Return a profile by experience."""
+
+    return Profile.query.filter(Profile.experience == experience).first()
+
+
+def get_profile_by_project(project):
+    """Return a profile by project."""
+
+    return Profile.query.filter(Profile.project == project).first()
+
+
+def get_profile_by_skill(skill):
+    """Return a profile by skill."""
+
+    return Profile.query.filter(Profile.skill == skill).first()
+
+
+def get_profile_by_education(education):
+    """Return a profile by education."""
+
+    return Profile.query.filter(Profile.education == education).first()
+
+
+def get_profile_by_contact(contact):
+    """Return a profile by contact."""
+
+    return Profile.query.filter(Profile.contact == contact).first()
+
+
+
 def get_profile_by_id(profile_id):
     """Return a profile by their profile_id."""
     

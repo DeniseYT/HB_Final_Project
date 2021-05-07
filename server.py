@@ -113,7 +113,27 @@ def build_new_content():
                                   user_id)
     
     # working fine
-    session["profile"] = profile.about
+    profile_about = crud.get_profile_by_about(about)
+    session["about"] = profile_about.about
+
+    profile_experience = crud.get_profile_by_experience(experience)
+    session["experience"] = profile_experience.experience
+
+    profile_skill = crud.get_profile_by_skill(skill)
+    session["skill"] = profile_skill.skill
+
+    profile_project = crud.get_profile_by_project(project)
+    session["project"] = profile_project.project
+
+    profile_education = crud.get_profile_by_education(education)
+    session["education"] = profile_education.education
+
+    profile_contact = crud.get_profile_by_contact(contact)
+    session["contact"] = profile_contact.contact
+
+    # profile_user_id = crud.get_profile_by_user_id(user_id)
+    # session["user_id"] = profile_user_id.user_id
+
     
     
     # all_contents = crud.get_profile_contents()
