@@ -122,9 +122,10 @@ def build_new_content():
     education = request.form.get("education")
     contact = request.form.get("contact")
     user_id = session.get("user_id")
-    crud.create_profile(about=about, experience=experience, skill=skill, project=project, education=education, contact=contact, user_id=user_id)
+    profile = crud.create_profile(about=about, experience=experience, skill=skill, project=project, education=education, contact=contact, user_id=user_id)
 
-    return redirect ('/')
+    # return redirect ('/')
+    return render_template('homepage.html', profile=profile)
                                  
     # else:
     #     return render_template('build_your_own.html')
