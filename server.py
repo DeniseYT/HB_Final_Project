@@ -111,22 +111,23 @@ def build_new():
     return render_template('build_your_own.html', contents=contents) 
     #second profile = variable name
 
-@app.route('/build', methods=['POST', 'GET'])
+@app.route('/build', methods=['POST'])
 def build_new_content():
-    if request.method == "POST":
-        about = request.form.get("about")
-        experience = request.form.get("experience")
-        project = request.form.get("project")
-        skill = request.form.get("skill")
-        education = request.form.get("education")
-        contact = request.form.get("contact")
-        user_id = session.get("user_id")
-        crud.create_profile(about=about, experience=experience, skill=skill, project=project, education=education, contact=contact, user_id=user_id)
 
-        return redirect ('/')
+    # if request.method == "POST":
+    about = request.form.get("about")
+    experience = request.form.get("experience")
+    project = request.form.get("project")
+    skill = request.form.get("skill")
+    education = request.form.get("education")
+    contact = request.form.get("contact")
+    user_id = session.get("user_id")
+    crud.create_profile(about=about, experience=experience, skill=skill, project=project, education=education, contact=contact, user_id=user_id)
+
+    return redirect ('/')
                                  
-    else:
-        return render_template('build_your_own.html')
+    # else:
+    #     return render_template('build_your_own.html')
 
 
 
