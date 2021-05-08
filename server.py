@@ -32,15 +32,7 @@ def user_homepage(username):
 
 
 
-@app.route('/build')
-def build_new():
-    """Build a new content."""
 
-    contents = crud.get_profile_contents()
-    # will return a list 
-
-    return render_template('build_your_own.html', contents=contents) 
-    #second profile = variable name
     
 
 
@@ -98,25 +90,64 @@ def build_new_with_username(username):
 
 #     return render_template('build_your_own_to_homepage.html')
 
+# @app.route('/build')
+# def build_new():
+#     """Build a new content."""
+
+#     contents = crud.get_profile_contents()
+#     # will return a list 
+
+#     return render_template('build_your_own.html', contents=contents) 
+    #second profile = variable name
 
 
-@app.route('/build', methods=['POST'])
-def build_new_content():
-    """User build their own content."""
-
-    about = request.form.get("about")
-    experience = request.form.get("experience")
-    project = request.form.get("project")
-    skill = request.form.get("skill")
-    education = request.form.get("education")
-    contact = request.form.get("contact")
-    user_id = session.get("user_id")
+@app.route('/build')
+def build_new():
+    """Build a new content."""
 
     contents = crud.get_profile_contents()
+    # will return a list 
 
-    profile_in_db = []
+    return render_template('build_your_own.html', contents=contents) 
+    #second profile = variable name
 
-    for content in contents:
+@app.route('/build', methods=['POST', 'GET'])
+def build_new_content():
+    if request.method == "POST":
+        about = request.form.get("about")
+        experience = request.form.get("experience")
+        project = request.form.get("project")
+        skill = request.form.get("skill")
+        education = request.form.get("education")
+        contact = request.form.get("contact")
+        user_id = session.get("user_id")
+        crud.create_profile(about=about, experience=experience, skill=skill, project=project, education=education, contact=contact, user_id=user_id)
+
+        return redirect ('/')
+                                 
+    else:
+        return render_template('build_your_own.html')
+
+
+
+
+# @app.route('/build', methods=['POST'])
+# def build_new_content():
+#     """User build their own content."""
+
+#     about = request.form.get("about")
+#     experience = request.form.get("experience")
+#     project = request.form.get("project")
+#     skill = request.form.get("skill")
+#     education = request.form.get("education")
+#     contact = request.form.get("contact")
+#     user_id = session.get("user_id")
+
+#     contents = crud.get_profile_contents()
+
+    # profile_in_db = []
+
+    # for content in contents:
         # about, experience, project, skill, education, contact = (content["about"],
         #                                                          content["experience"],
         #                                                          content["project"],
@@ -127,19 +158,19 @@ def build_new_content():
         # profile = crud.create_profile(about,experience,project,skill,education,contact,user_id)
         # profile = profile_in_db.append(profile)
 
-        about = crud.get_profile_by_about(content.about)
-        experience = crud.get_profile_by_experience(content.experience)
-        project = crud.get_profile_by_project(project)
-        skill = crud.get_profile_by_skill(skill)
-        education = crud.get_profile_by_education(education)
-        contact = crud.get_profile_by_contact(contact)
+        # about = crud.get_profile_by_about(content.about)
+        # experience = crud.get_profile_by_experience(content.experience)
+        # project = crud.get_profile_by_project(project)
+        # skill = crud.get_profile_by_skill(skill)
+        # education = crud.get_profile_by_education(education)
+        # contact = crud.get_profile_by_contact(contact)
 
-        profile_in_db.append({"about": about, 
-                              "experience": experience,
-                              "project": project,
-                              "skill": skill,
-                              "education": education,
-                              "contact": contact})
+        # profile_in_db.append({"about": about, 
+        #                       "experience": experience,
+        #                       "project": project,
+        #                       "skill": skill,
+        #                       "education": education,
+        #                       "contact": contact})
         
 
 
@@ -179,8 +210,8 @@ def build_new_content():
     # session["user"] = user.username
 
 
-    flash("Your profile has been added")
-    return redirect ('/')
+    # flash("Your profile has been added")
+    # return redirect ('/')
     
 
 
