@@ -15,7 +15,12 @@ app.jinja_env.undefined = StrictUndefined
 def homepage():
     """View homepage."""
 
-    return render_template('homepage.html')
+    # just testing ok
+    users = crud.get_users()
+    oneUser = crud.get_user_by_username("test1") 
+    return render_template('homepage.html', users=users, oneUser=oneUser)
+
+    # return render_template('homepage.html')
 
 
 # When user completes their content, they have a whold new webpage
@@ -31,9 +36,12 @@ def user_homepage(username):
 def build_new():
     """Build a new content."""
 
-    profile = crud.get_profile_contents()
+    contents = crud.get_profile_contents()
+    # will return a list 
 
-    return render_template('build_your_own.html', profile=profile)
+    return render_template('build_your_own.html', contents=contents) 
+    #second profile = variable name
+    
 
 
 @app.route('/build/<string:username>', methods=['POST'])
@@ -104,6 +112,37 @@ def build_new_content():
     contact = request.form.get("contact")
     user_id = session.get("user_id")
 
+    contents = crud.get_profile_contents()
+
+    profile_in_db = []
+
+    for content in contents:
+        # about, experience, project, skill, education, contact = (content["about"],
+        #                                                          content["experience"],
+        #                                                          content["project"],
+        #                                                          content["skill"],
+        #                                                          content["education"],
+        #                                                          content["contact"]) 
+
+        # profile = crud.create_profile(about,experience,project,skill,education,contact,user_id)
+        # profile = profile_in_db.append(profile)
+
+        about = crud.get_profile_by_about(content.about)
+        experience = crud.get_profile_by_experience(content.experience)
+        project = crud.get_profile_by_project(project)
+        skill = crud.get_profile_by_skill(skill)
+        education = crud.get_profile_by_education(education)
+        contact = crud.get_profile_by_contact(contact)
+
+        profile_in_db.append({"about": about, 
+                              "experience": experience,
+                              "project": project,
+                              "skill": skill,
+                              "education": education,
+                              "contact": contact})
+        
+
+
     # profile = crud.create_profile(about=about,
     #                               experience=experience,
     #                               skill=skill,
@@ -112,33 +151,27 @@ def build_new_content():
     #                               contact=contact,
     #                               user_id=user_id)
 
-    # either one is fine
-    profile = crud.create_profile(about,
-                                  experience,
-                                  project,
-                                  skill,
-                                  education,
-                                  contact,
-                                  user_id)
+   
+  
     
-    # # working fine
-    profile_about = crud.get_profile_by_about(about)
-    # session["about"] = profile_about.about
+    
+    # profile_about = crud.get_profile_by_about(about)
+    # # session["about"] = profile_about.about
 
-    profile_experience = crud.get_profile_by_experience(experience)
-    session["experience"] = profile_experience.experience
+    # profile_experience = crud.get_profile_by_experience(experience)
+    # session["experience"] = profile_experience.experience
 
-    profile_project = crud.get_profile_by_project(project)
-    session["project"] = profile_project.project
+    # profile_project = crud.get_profile_by_project(project)
+    # session["project"] = profile_project.project
 
-    profile_skill = crud.get_profile_by_skill(skill)
-    session["skill"] = profile_skill.skill
+    # profile_skill = crud.get_profile_by_skill(skill)
+    # session["skill"] = profile_skill.skill
 
-    profile_education = crud.get_profile_by_education(education)
-    session["education"] = profile_education.education
+    # profile_education = crud.get_profile_by_education(education)
+    # session["education"] = profile_education.education
 
-    profile_contact = crud.get_profile_by_contact(contact)
-    session["contact"] = profile_contact.contact
+    # profile_contact = crud.get_profile_by_contact(contact)
+    # session["contact"] = profile_contact.contact
 
 
     # input_username = request.form.get('username')
