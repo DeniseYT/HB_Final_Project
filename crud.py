@@ -66,6 +66,7 @@ def get_profile_contents():
     return Profile.query.all()
 
 
+
 def get_profile_by_about(about):
     """Return a profile by about."""
 
@@ -101,6 +102,11 @@ def get_profile_by_contact(contact):
 
     return Profile.query.filter(Profile.contact == contact).first()
 
+
+def get_profile_by_user_id(user_id):
+    """Return a profile by their user_id."""
+
+    return Profile.query.filter(Profile.user_id==user_id).all()
 
 
 def get_profile_by_id(profile_id):

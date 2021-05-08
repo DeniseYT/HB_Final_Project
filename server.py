@@ -24,21 +24,17 @@ def homepage():
 
 
 # When user completes their content, they have a whold new webpage
-@app.route('//<string:username>')
-def user_homepage(username):
-    """View user's homepage."""
+# @app.route('//<string:username>')
+# def user_homepage(username):
+#     """View user's homepage."""
 
-    return render_template('homepage.html')
-
-
+#     return render_template('homepage.html')
 
 
-    
 
-
-@app.route('/build/<string:username>', methods=['POST'])
-def build_new_with_username(username):
-    """Build a new content."""
+# @app.route('/build/<string:username>', methods=['POST'])
+# def build_new_with_username(username):
+#     """Build a new content."""
 
     # username = session.get("username")
     # username = "Denise"
@@ -47,10 +43,10 @@ def build_new_with_username(username):
     # content = "about something"
     # content = session.get("content")
 
-    input_username = request.form.get('username')
-    username = crud.get_user_by_username(input_username)
+    # input_username = request.form.get('username')
+    # username = crud.get_user_by_username(input_username)
 
-    return render_template('build_your_own.html', username=username)
+    # return render_template('build_your_own.html', username=username)
 
 
 
@@ -100,16 +96,24 @@ def build_new_with_username(username):
 #     return render_template('build_your_own.html', contents=contents) 
     #second profile = variable name
 
+@app.route('/<usr>')
+def user(usr):
+    """username shows in url."""
+
+    return f"<h1>{usr}</h1>"
+
 
 @app.route('/build')
 def build_new():
     """Build a new content."""
 
-    contents = crud.get_profile_contents()
+    # contents = crud.get_profile_contents()
     # will return a list 
 
-    return render_template('build_your_own.html', contents=contents) 
-    #second profile = variable name
+    profile = crud.get_profile_by_user_id(user_id)
+
+    return render_template('build_your_own.html', profile=profile) 
+    #second user_id = variable name
 
 @app.route('/build', methods=['POST'])
 def build_new_content():
@@ -122,10 +126,39 @@ def build_new_content():
     education = request.form.get("education")
     contact = request.form.get("contact")
     user_id = session.get("user_id")
+
     profile = crud.create_profile(about=about, experience=experience, skill=skill, project=project, education=education, contact=contact, user_id=user_id)
+    contents = crud.get_profile_contents()
+
+    profile_about = crud.get_profile_by_about(about)
+    session["about"] = profile_about.about
+
+    profile_experience = crud.get_profile_by_experience(experience)
+    session["experience"] = profile_experience.experience
+
+    profile_project = crud.get_profile_by_project(project)
+    session["project"] = profile_project.project
+
+    profile_skill = crud.get_profile_by_skill(skill)
+    session["skill"] = profile_skill.skill
+
+    profile_education = crud.get_profile_by_education(education)
+    session["education"] = profile_education.education
+
+    profile_contact = crud.get_profile_by_contact(contact)
+    session["contact"] = profile_contact.contact
+
+
+    # input_username = request.form.get('username')
+    # user = crud.get_user_by_username(input_username)
+    # session["user"] = user.username
+
+
+    flash("Your profile has been added")
 
     # return redirect ('/')
-    return render_template('homepage.html', profile=profile)
+    return redirect ('/build')
+    # return render_template('homepage.html', profile=profile, contents=contents)
                                  
     # else:
     #     return render_template('build_your_own.html')
@@ -186,8 +219,6 @@ def build_new_content():
 
    
   
-    
-    
     # profile_about = crud.get_profile_by_about(about)
     # # session["about"] = profile_about.about
 

@@ -28,12 +28,12 @@ class Profile(db.Model):
     __tablename__ = 'profiles'
 
     profile_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    about = db.Column(db.Text, nullable=True)
-    experience = db.Column(db.Text, nullable=True)
-    skill = db.Column(db.Text, nullable=True)
-    project = db.Column(db.Text, nullable=True)
-    education = db.Column(db.Text, nullable=True)
-    contact = db.Column(db.Text, nullable=True)
+    about = db.Column(db.Text, nullable=False)
+    experience = db.Column(db.Text, nullable=False)
+    skill = db.Column(db.Text, nullable=False)
+    project = db.Column(db.Text, nullable=False)
+    education = db.Column(db.Text, nullable=False)
+    contact = db.Column(db.Text, nullable=False)
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id')) 
     # because one user has one profile, so we connect two tables
