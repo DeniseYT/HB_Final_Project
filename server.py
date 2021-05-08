@@ -16,11 +16,11 @@ def homepage():
     """View homepage."""
 
     # just testing ok
-    users = crud.get_users()
-    oneUser = crud.get_user_by_username("test1") 
-    return render_template('homepage.html', users=users, oneUser=oneUser)
+    # users = crud.get_users()
+    # oneUser = crud.get_user_by_username("test1") 
+    # return render_template('homepage.html', users=users, oneUser=oneUser)
 
-    # return render_template('homepage.html')
+    return render_template('homepage.html')
 
 
 # When user completes their content, they have a whold new webpage
