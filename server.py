@@ -22,6 +22,55 @@ def homepage():
 
     return render_template('homepage.html')
 
+@app.route('/account')
+def all_users():
+    """View all users."""
+
+    users = crud.get_users()
+
+    return render_template('account.html', users=users)
+
+
+@app.route('/account', methods=['POST'])
+def register_users():
+    """Create a new user."""
+
+    username = request.form.get('username')
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    user = crud.get_user_by_email(email)
+
+    if user:
+        flash('Email has already taken. Try again')
+        return redirect('/account')
+
+    else:
+        crud.create_user(username, email, password)
+        user = crud.get_user_by_email(email)
+        session['user'] = user.username
+        flash('Your account has been created.')
+        return redirect('/build')
+
+
+@app.route('/login', methods=['POST'])
+def user_login():
+    """Login user"""
+
+    input_email = request.form.get('email')
+    input_password = request.form.get('password')
+
+    user = crud.get_user_by_email(input_email)
+
+    if user and user.password == input_password:
+        session['user'] = user.username
+        flash('Logged in.')
+        return redirect('/build')
+
+    else:
+        flash('incorrect login')
+        return redirect('/account')
+        
 
 @app.route('/<usr>')
 def user(usr):
@@ -95,59 +144,8 @@ def build_new_content():
     # return redirect ('/build')
     # return render_template('homepage.html', profile=profile, contents=contents)
                                  
-    # else:
-    #     return render_template('build_your_own.html')
 
 
-
-@app.route('/account')
-def all_users():
-    """View all users."""
-
-    users = crud.get_users()
-
-    return render_template('account.html', users=users)
-
-
-@app.route('/account', methods=['POST'])
-def register_users():
-    """Create a new user."""
-
-    username = request.form.get('username')
-    email = request.form.get('email')
-    password = request.form.get('password')
-
-    user = crud.get_user_by_email(email)
-
-    if user:
-        flash('Email has already taken. Try again')
-        return redirect('/account')
-
-    else:
-        crud.create_user(username, email, password)
-        user = crud.get_user_by_email(email)
-        session['user'] = user.username
-        flash('Your account has been created.')
-        return redirect('/build')
-
-
-@app.route('/login', methods=['POST'])
-def user_login():
-    """Login user"""
-
-    input_email = request.form.get('email')
-    input_password = request.form.get('password')
-
-    user = crud.get_user_by_email(input_email)
-
-    if user and user.password == input_password:
-        session['user'] = user.username
-        flash('Logged in.')
-        return redirect('/build')
-
-    else:
-        flash('incorrect login')
-        return redirect('/account')
 
 
 # @app.route("/", methods=['POST'])
