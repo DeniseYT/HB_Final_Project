@@ -11,16 +11,15 @@ class User(db.Model):
     __tablename__ = 'users'
 
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    username = db.Column(db.String(20), nullable=False)
+    username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(20), unique=True, nullable=False)
     password = db.Column(db.String(20), nullable=False)
 
-    # Need this line?
-    # profile = db.relationship('Profile', backref='users')
+    # profile = db.relationship('Profile', backref='users', uselist=False)
+    # profile = db.relationship('Profile', uselist=False)
 
     def __repr__(self):
         return f'<User user_id={self.user_id} email={self.email}>'
-
 
 class Profile(db.Model):
     """A profile."""
@@ -34,12 +33,10 @@ class Profile(db.Model):
     project = db.Column(db.Text, nullable=False)
     education = db.Column(db.Text, nullable=False)
     contact = db.Column(db.Text, nullable=False)
-
-    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id')) 
-    # because one user has one profile, so we connect two tables
-
-    # Need this line?
-    user = db.relationship('User', backref='profiles')
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), unique=True) 
+    
+    user = db.relationship('User', backref='profile')
+    # profile = db.relationship('Profile', uselist=False)
 
     def __repr__(self):
         return f'<Profile profile_id={self.profile_id} about={self.about}>'

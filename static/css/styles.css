@@ -12,6 +12,7 @@
     text-align: left;
 }
 
+
 #experience-div {
     display: inline-block;
     width: 200px;
@@ -62,8 +63,8 @@
     border: 2px solid white;
 }
 
-#like-div {
-    display: inline;
+#like-show {
+    display: inline-block;
     width: 10px;
     height: 10px;
     padding: 5px;
@@ -71,9 +72,9 @@
     text-align: left;
 }
 
-#comment-div {
-    display: inline;
-    width: 10px;
+#comment-show {
+    display: inline-block;
+    width: 100px;
     height: 10px;
     padding: 5px;
     border: 2px solid white;
@@ -92,6 +93,12 @@ h1 {
     font-family: sans-serif;
     color: brown;
   }
+
+h2 {
+    font-family: sans-serif;
+    color: blue;
+  }
+
 
 body {
     background-color: #D3D3D3;
