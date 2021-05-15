@@ -21,6 +21,22 @@ def homepage():
 
     return render_template('homepage.html')
 
+
+@app.route('/profile')
+def profile():
+    """View profile built page."""
+
+    return render_template('homepage.html')
+
+
+# React
+@app.route("/profile/Denise")
+def show_user_profile():
+    """Show particular user's profile"""
+
+    return render_template("user_profile_data.html")
+
+
 @app.route('/account')
 def all_users():
     """View all users."""
@@ -73,17 +89,6 @@ def user_login():
         return redirect('/account')
 
 
-# just testing and working fine
-# @app.route('/user')
-# def user():
-#     """username shows in url."""
-
-#     if "user" in session:
-#         user = session["user"]
-
-#     return f"<h1>{user}</h1>"
-
-
 @app.route('/build')
 def build_new():
     """Build a new content."""
@@ -108,11 +113,6 @@ def build_new_content():
     education = request.form.get("education")
     contact = request.form.get("contact")
     user_id = session.get("user_id")
-
-    # profile = crud.create_profile(about=about, experience=experience, skill=skill, project=project, education=education, contact=contact, user_id=user_id)
-    # profiles = crud.get_profiles()
-
-    print(session)
 
     profile_content = crud.create_profile(about=about,
                                   experience=experience,
@@ -141,23 +141,12 @@ def build_new_content():
     profile_contact = crud.get_profile_by_contact(contact)
     session["contact"] = profile_contact.contact
 
-
-    # input_username = request.form.get('username')
-    # user = crud.get_user_by_username(input_username)
-    # session["user"] = user.username
-
     flash("Your profile has been added")
-    return redirect ('/')
-    # return redirect ('/build')
-    # return render_template('homepage.html', profile=profile, contents=contents)
+
+    return redirect ('/profile')
 
 
-# React
-@app.route("/profile/Denise")
-def show_user_profile():
-    """Show particular user's profile"""
 
-    return render_template("user_profile_data.html")
 
 
 

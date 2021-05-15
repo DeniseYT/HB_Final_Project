@@ -8,8 +8,9 @@
 
 {% block body %}
 
-
-<h1>Personal Website</h1>
+<body>
+    <h1 id="username">{{ session.get("user") }}, a web developer and designer</h1>
+</body>
 
 <form action="/build" method="POST">
 
@@ -34,7 +35,6 @@
 
         </div>
 
-            
 
         <div id="experience-div">
             <div>Experience</div>
@@ -76,8 +76,16 @@
                 <button id="comment-btn" type="comment">Comment</button> 
             <h3 id="contact-show">{{ session.get("contact") }}</h3>
         </div>
-
     </div>
+
+
+    <div class="build-new">
+        <div id="build-div">
+            <a href="http://0.0.0.0:5000/build">Build your own website?</a>
+        </div>
+    </div>
+
+
 </form>
 
 {% endblock body%}
