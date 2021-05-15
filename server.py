@@ -152,22 +152,31 @@ def build_new_content():
     # return render_template('homepage.html', profile=profile, contents=contents)
 
 
-@app.route('/')
-def add_like():
-    """Add like if user like the content"""
+# React
+@app.route("/profile/Denise")
+def show_user_profile():
+    """Show particular user's profile"""
 
-    like = request.args.get("like")
-
-    return "You click like!"
+    return render_template("user_profile_data.html")
 
 
-@app.route('/', methods=['POST'])
-def add_comment():
-    """Add comment if user like to comment the content"""
 
-    comment = request.form.get("comment")
+# @app.route('/')
+# def add_like():
+#     """Add like if user like the content"""
 
-    return "You click comment!"
+#     like = request.args.get("like")
+
+#     return "You click like!"
+
+
+# @app.route('/', methods=['POST'])
+# def add_comment():
+#     """Add comment if user like to comment the content"""
+
+#     comment = request.form.get("comment")
+
+#     return "You click comment!"
 
 
 
