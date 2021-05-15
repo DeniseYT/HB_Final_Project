@@ -17,16 +17,16 @@
   </head>
   <body>
 
+    <!-- <script src="/static/js/build_your_own_ajax.js"></script> -->
+
     {% for msg in get_flashed_messages() %}
     <p class="flash-msg">
       {{ msg }}
-    </p>
-    <script>
-      console.log("hello world");
-    </script>
-    <script src="/static/js/build_your_own_ajax.js"></script>
-
+    </p> 
+   
   {% endfor %}
+
+  
   {% block body %}{% endblock %}
   {% block after_body %}{% endblock %}
   </body>

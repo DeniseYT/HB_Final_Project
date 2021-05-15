@@ -72,7 +72,32 @@ $('#submit').on('submit', (evt) => {
     });
 });
 
+// jQuery + AJAX
+$('#like-btn').on('like', (evt) => {
+    // evt.preventDefault();
+
+    const likeBtnClick = {
+        'like': $('#like-show').val(),
+    };
+
+    $.post('/build', likeBtnClick, (res) => {
+        alert(res);
+        $('#like-show').html(res.like);
+    });
+});
 
 
+$('#comment-btn').on('comment', (evt) => {
+    // evt.preventDefault();
+
+    const commentBtnClick = {
+        'comment': $('#comment-show').val(),
+    };
+
+    $.post('/build', commentBtnClick, (res) => {
+        alert(res);
+        $('#comment-show').html(res.comment);
+    });
+});
 
 

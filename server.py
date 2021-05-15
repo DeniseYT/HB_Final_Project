@@ -1,10 +1,9 @@
-"""Server for movie ratings app."""
-
 from flask import (Flask, render_template, request, flash, session, redirect)
 from model import connect_to_db
-from crud import get_user_by_email, get_user_by_username, create_profile, get_profile_by_about
+from crud import get_user_by_email, get_user_by_username
 import crud
 from jinja2 import StrictUndefined
+
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -153,44 +152,43 @@ def build_new_content():
     # return render_template('homepage.html', profile=profile, contents=contents)
 
 
-@app.route('/add_comment', methods=['POST'])
-def add_comment():
+@app.route('/build', methods=['POST'])
+def add_like():
+    """Add like if user like the content"""
 
-    user_id = session.get("user_id")
-    # profile_id = request.form.get("profile_id")
+    like = request.form.get("like")
+
+    return "You click like!"
+
+
+@app.route('/build', methods=['POST'])
+def add_comment():
+    """Add comment if user like to comment the content"""
+
     comment = request.form.get("comment")
 
-    user_id = crud.get_user_by_id(user_id)
-    profile_id = crud.get_profile_by_id(profile_id)
-    add_comment = crud.create_comment(comment=comment, like=like, prodile_id=profile_id)
-
-    flash("Your Comment has been added")
-    return redirect('/')
+    return "You click comment!"
 
 
 
-@app.route('/profile/view/<username>')
-def personal_profile(username):
-
-    # test ok in -i 
-    # username = get_user_by_username("test1") ---> "test1"
-    # user_id = get_user_by_username("test1").user_id ---> "1"
-    # username = get_profile_by_user_id("1").username ---> "1"
-    # username = get_profile_by_profile_id("1").username ---> "1"
-
-    username = crud.get_user_by_username(username)
-    user_id = get_user_by_username(username).user_id
-    # user_id = crud.get_user_by_username(username) # same as above
-
-    return render_template('homepage.html', user_id=user_id)
+if __name__ == '__main__':
+    connect_to_db(app)
+    app.run(host='0.0.0.0', debug=True)
 
 
-@app.route('/profile/view/<username>')
-def view_personal_profile(username):
 
-    # test ok in -i 
-    # user = get_user_by_id("1") ---> user.user_id ---> 1
-    # user = get_profile_by_user_id("1") ---> user[0] ---> user's profile
+# @app.route('/profile/view/<username>')
+# def personal_profile(username):
+
+    # username = crud.get_user_by_username(username)
+    # user_id = get_user_by_username(username).user_id
+    # # user_id = crud.get_user_by_username(username) # same as above
+
+    # return render_template('homepage.html', user_id=user_id)
+
+
+# @app.route('/profile/view/<username>')
+# def view_personal_profile(username):
 
     # user_id = crud.get_user_by_id(user_id)
     # profile_id = crud.get_profile_by_profile_id(profile_id)
@@ -222,7 +220,21 @@ def view_personal_profile(username):
 
 # @app.route('/add_comment', methods=['POST'])
 # def add_comment():
-    """User adding a comment to a profile"""
+
+#     user_id = session.get("user_id")
+#     # profile_id = request.form.get("profile_id")
+#     comment = request.form.get("comment")
+
+#     user_id = crud.get_user_by_id(user_id)
+#     profile_id = crud.get_profile_by_id(profile_id)
+#     add_comment = crud.create_comment(comment=comment, like=like, prodile_id=profile_id)
+
+#     flash("Your Comment has been added")
+#     return redirect('/')
+
+# @app.route('/add_comment', methods=['POST'])
+# def add_comment():
+    # """User adding a comment to a profile"""
 
     # user_id = session.get("user_id")
     # # profile_id = request.form.get("profile_id")
@@ -254,6 +266,3 @@ def view_personal_profile(username):
 
 
 
-if __name__ == '__main__':
-    connect_to_db(app)
-    app.run(host='0.0.0.0', debug=True)
