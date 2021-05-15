@@ -12,6 +12,8 @@
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
     crossorigin="anonymous"></script>
 
+    <script src="/static/js/homepage.js"></script>
+
 </head>
 
 <h1>Personal Website</h1>
@@ -22,8 +24,21 @@
         <div id="about-div">
             <div>About</div>
                 <button id="like-btn" type="like">Like</button>
+                <!-- <button id="like-btn" onClick="likeButton()">Like</button> -->
+                    <text id="like-show">0</text>
+
                 <button id="comment-btn" type="comment">Comment</button> 
+                    <text id="comment-show">Awesome!</text>
                 <h3 id="about-show">{{ session.get("about") }}</h3>
+
+                
+                <script>
+                    "use strict";
+                    $('#like-btn').on('click', () => {
+                        alert('You click like');
+                    })
+                </script>
+
         </div>
 
             

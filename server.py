@@ -152,16 +152,16 @@ def build_new_content():
     # return render_template('homepage.html', profile=profile, contents=contents)
 
 
-@app.route('/build', methods=['POST'])
+@app.route('/')
 def add_like():
     """Add like if user like the content"""
 
-    like = request.form.get("like")
+    like = request.args.get("like")
 
     return "You click like!"
 
 
-@app.route('/build', methods=['POST'])
+@app.route('/', methods=['POST'])
 def add_comment():
     """Add comment if user like to comment the content"""
 

@@ -23,16 +23,13 @@
 
     <div class="maincontainer-top">
         <div id="about-div">
-            <h2>About</h2>
-            
-                <h3 id="about-show">{{ session.get("about") }}</h3>
+            <div>About</div>
+           
                 <textarea id="about" type="text" name="about" required></textarea>
-                
                 <button id="like-btn" type="like">Like</button>
-                    <div id="like-show"></div>
-                
                 <button id="comment-btn" type="comment">Comment</button> 
-                    <div id="comment-show"></div>
+          
+                <h3 id="about-show">{{ session.get("about") }}</h3>
                 
         </div>
 

@@ -49,55 +49,55 @@
 
 
 // jQuery + AJAX
-$('#submit').on('submit', (evt) => {
-    // evt.preventDefault();
+// $('#submit').on('submit', (evt) => {
+//     // evt.preventDefault();
 
-    const formInputs = {
-        'about': $('#about').val(),
-        'experience': $('#experience').val(),
-        'project': $('#project').val(),
-        'skill': $('#skill').val(),
-        'education': $('#education').val(),
-        'contact': $('#contact').val()
-    };
+//     const formInputs = {
+//         'about': $('#about').val(),
+//         'experience': $('#experience').val(),
+//         'project': $('#project').val(),
+//         'skill': $('#skill').val(),
+//         'education': $('#education').val(),
+//         'contact': $('#contact').val()
+//     };
 
-    $.post('/build', formInputs, (res) => {
-        alert(res);
+//     $.post('/build', formInputs, (res) => {
+//         alert(res);
         // $('#about-div').html(res.about);
         // $('#experience-div').html(res.experience);
         // $('#project-div').html(res.project);
         // $('#skill-div').html(res.skill);
         // $('#education-div').html(res.education);
         // $('#contact-div').html(res.contact);
-    });
+//     });
+// });
+
+// jQuery 
+const addLike = (likeNumber) => {
+    $('#like-show').append(
+    <tr>
+      <td>${likeNumber}</td>
+    </tr>
+    );
+};
+
+const incrementLikeTotal = (totalNumber) => {
+    const likeTotal = $('#like-total');
+
+    let total = Number(likeTotal.html());
+    total += 1;
+
+    $('#like-total').html(likeTotal)
+};
+
+
+$('#like-btn').on('click', () => {
+    addLike('1');
+    incrementLikeTotal(1);
 });
-
-// jQuery + AJAX
-$('#like-btn').on('like', (evt) => {
-    // evt.preventDefault();
-
-    const likeBtnClick = {
-        'like': $('#like-show').val(),
-    };
-
-    $.post('/build', likeBtnClick, (res) => {
-        alert(res);
-        $('#like-show').html(res.like);
-    });
-});
+    
 
 
-$('#comment-btn').on('comment', (evt) => {
-    // evt.preventDefault();
 
-    const commentBtnClick = {
-        'comment': $('#comment-show').val(),
-    };
-
-    $.post('/build', commentBtnClick, (res) => {
-        alert(res);
-        $('#comment-show').html(res.comment);
-    });
-});
 
 

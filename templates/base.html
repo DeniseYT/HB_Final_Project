@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
-    <script 
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
     crossorigin="anonymous"></script>
 
     <title>
@@ -17,7 +20,7 @@
   </head>
   <body>
 
-    <!-- <script src="/static/js/build_your_own_ajax.js"></script> -->
+    <script src="/static/js/homepage.js"></script>
 
     {% for msg in get_flashed_messages() %}
     <p class="flash-msg">

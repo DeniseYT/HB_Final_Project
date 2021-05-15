@@ -63,7 +63,7 @@
     border: 2px solid white;
 }
 
-#like-show {
+/* #like-show {
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -79,7 +79,7 @@
     padding: 5px;
     border: 2px solid white;
     text-align: left;
-}
+} */
 
 .build-div {
     display: inline-block;
