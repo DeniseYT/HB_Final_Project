@@ -33,6 +33,19 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
 
+
+# for account register/login
+def get_all_emails():
+    """Return all emails."""
+
+    email_list = []
+
+    for user in get_users():
+        email_list.append(user.email)
+
+    return email_list
+
+
 # for account register/login
 def get_user_by_id(user_id):
     """Return a user by their primary key"""

@@ -22,11 +22,11 @@ def homepage():
     return render_template('homepage.html')
 
 
-@app.route('/profile')
-def profile():
-    """View profile built page."""
+# @app.route('/profile')
+# def profile():
+#     """View profile built page."""
 
-    return render_template('homepage.html')
+#     return render_template('homepage.html')
 
 
 # React
@@ -41,9 +41,7 @@ def show_user_profile():
 def all_users():
     """View all users."""
 
-    users = crud.get_users()
-
-    return render_template('account.html', users=users)
+    return render_template('account.html')
 
 
 @app.route('/account', methods=['POST'])
@@ -54,19 +52,26 @@ def register_users():
     email = request.form.get('email')
     password = request.form.get('password')
 
-    user = crud.get_user_by_email(email)
-
-    if user:
+    if email in crud.get_all_emails():
         flash('Email has already taken. Try again')
         return redirect('/account')
 
     else:
         crud.create_user(username, email, password)
-        # user = crud.get_user_by_email(email)
-        user = crud.get_user_by_username(username) # both works
+        user = crud.get_user_by_username(username) 
         session['user'] = user.username
         flash('Your account has been created.')
         return redirect('/build')
+
+
+@app.route('/login')
+def show_login():
+
+    if session['user']:
+        flash('You are already logged in')
+        return redirect('/build')
+
+    return render_template('account.html')
 
 
 @app.route('/login', methods=['POST'])
@@ -89,6 +94,13 @@ def user_login():
         return redirect('/account')
 
 
+@app.route('/logout')
+def user_logout():
+    # remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect('/')
+
+
 @app.route('/build')
 def build_new():
     """Build a new content."""
@@ -101,6 +113,13 @@ def build_new():
     # profile = crud.get_profile_by_user_id(user_id)
     # return render_template('build_your_own.html', profile=profile) 
     # second user_id = variable name
+
+@app.route('/build/<username>')
+def build_new_profile(username):
+
+    session['user'] = user.username
+    username = crud.get_user_by_username(username)
+    return render_template('build_your_own.html',username=username)
 
 
 @app.route('/build', methods=['POST'])
@@ -143,7 +162,7 @@ def build_new_content():
 
     flash("Your profile has been added")
 
-    return redirect ('/profile')
+    return redirect ('/')
 
 
 

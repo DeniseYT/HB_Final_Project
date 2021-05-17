@@ -16,72 +16,70 @@
 
     <div class="maincontainer-top">
         <div id="about-div">
-            <div>About</div>
+            <h3>About</h3>
+                <div id="about-show">{{ session.get("about") }}</div><br><br>
                 <button id="like-btn" type="like">Like</button>
                 <!-- <button id="like-btn" onClick="likeButton()">Like</button> -->
-                    <text id="like-show">0</text>
-
+                <text id="like-show">0</text>
                 <button id="comment-btn" type="comment">Comment</button> 
-                    <text id="comment-show">Awesome!</text>
-                <h3 id="about-show">{{ session.get("about") }}</h3>
-
+                <div id="comment-show">Awesome!</div><br>
                 
+
                 <script>
                     "use strict";
                     $('#like-btn').on('click', () => {
                         alert('You click like');
                     })
                 </script>
-
         </div>
 
 
         <div id="experience-div">
-            <div>Experience</div>
+            <h3>Experience</h3>
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
-                <h3 id="experience-show">{{ session.get("experience") }}</h3>
+                <h4 id="experience-show">{{ session.get("experience") }}</h4>
         </div>
     </div>
 
 
     <div class="maincontainer-middle">
         <div id="project-div">
-            <div>Project</div>
+            <h3>Project</h3>
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
-                <h3 id="project-show">{{ session.get("project") }}</h3>
+                <h4 id="project-show">{{ session.get("project") }}</h4>
         </div>
                 
         <div id="skill-div">
-            <div>Skill</div>
+            <h3>Skill</h3>
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
-                <h3 id="skill-show">{{ session.get("skill") }}</h3>
+                <h4 id="skill-show">{{ session.get("skill") }}</h4>
         </div>
     </div>
 
 
     <div class="maincontainer-bottom">
         <div id="education-div">
-            <div>Education</div>
+            <h3>Education</h3>
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
-            <h3 id="education-show">{{ session.get("education") }}</h3>
+            <h4 id="education-show">{{ session.get("education") }}</h4>
         </div>
                 
         <div id="contact-div">
-            <div>Contact</div>
+            <h3>Contact</h3>
                 <button id="like-btn" type="like">Like</button>
                 <button id="comment-btn" type="comment">Comment</button> 
-            <h3 id="contact-show">{{ session.get("contact") }}</h3>
+            <h4 id="contact-show">{{ session.get("contact") }}</h4>
         </div>
     </div>
 
 
     <div class="build-new">
         <div id="build-div">
-            <a href="http://0.0.0.0:5000/build">Build your own website?</a>
+            <a href="http://0.0.0.0:5000/account">Build your own website?</a>
         </div>
     </div>
 
