@@ -70,7 +70,7 @@ def register_users():
         user = crud.get_user_by_username(username) 
         session['user'] = user.username
         flash('Your account has been created.')
-        return redirect('/build')
+        return redirect(f'/build/{user.username}')
 
 
 @app.route('/login')
@@ -145,7 +145,6 @@ def build_new_content():
                                   contact=contact,
                                   user_id=user_id)
 
-
     profile_about = crud.get_profile_by_about(about)
     session["about"] = profile_about.about
 
@@ -166,7 +165,7 @@ def build_new_content():
 
     flash("Your profile has been added")
 
-    return redirect ('/<username>')
+    return redirect ('/')
 
 
 @app.route('/add_comment', methods=['POST'])
