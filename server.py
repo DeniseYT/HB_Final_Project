@@ -22,6 +22,15 @@ def homepage():
     return render_template('homepage.html')
 
 
+@app.route('/<username>')
+def user_homepage(username):
+    """View particular user's homepage"""
+
+    # session['user'] = user.username
+    user = crud.get_user_by_username(username)
+    return render_template('homepage.html',user=user)
+
+
 # @app.route('/profile')
 # def profile():
 #     """View profile built page."""
@@ -117,9 +126,9 @@ def build_new():
 @app.route('/build/<username>')
 def build_new_profile(username):
 
-    session['user'] = user.username
-    username = crud.get_user_by_username(username)
-    return render_template('build_your_own.html',username=username)
+    # session['user'] = user.username
+    user = crud.get_user_by_username(username)
+    return render_template('build_your_own.html',user=user)
 
 
 @app.route('/build', methods=['POST'])
@@ -162,7 +171,7 @@ def build_new_content():
 
     flash("Your profile has been added")
 
-    return redirect ('/')
+    return redirect ('/<username>')
 
 
 
