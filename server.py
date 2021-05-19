@@ -96,7 +96,7 @@ def user_login():
         session['user'] = user.username # works
         session['user_id'] = user.user_id #show user_id
         flash('Logged in.')
-        return redirect('/build')
+        return redirect(f'/build/{user.username}')
 
     else:
         flash('incorrect login')
@@ -106,29 +106,24 @@ def user_login():
 @app.route('/logout')
 def user_logout():
     # remove the username from the session if it's there
-    session.pop('username', None)
+    # session.pop('username', None)
+    del session['user']
     return redirect('/')
 
 
-@app.route('/build')
-def build_new():
+@app.route('/build/<username>')
+def build_new(username):
     """Build a new content."""
 
-    profiles = crud.get_profiles()
-    return render_template('build_your_own.html', profiles=profiles)
+    # session["user"] = user.username
+    user = crud.get_user_by_username(username)
+    return render_template('build_your_own.html', user=user)
     
     # session['user'] = user.user_id
     # username = session['user']
     # profile = crud.get_profile_by_user_id(user_id)
     # return render_template('build_your_own.html', profile=profile) 
     # second user_id = variable name
-
-@app.route('/build/<username>')
-def build_new_profile(username):
-
-    # session['user'] = user.username
-    user = crud.get_user_by_username(username)
-    return render_template('build_your_own.html',user=user)
 
 
 @app.route('/build', methods=['POST'])
@@ -174,8 +169,19 @@ def build_new_content():
     return redirect ('/<username>')
 
 
+@app.route('/add_comment', methods=['POST'])
+def add_comment():
+    """Add comment if user like to comment the content"""
 
+    user_email = session.get("email")
+    profile_id = request.form.get("profile_id")
+    comment = request.form.get("comment")
 
+    profile = crud.get_profile_by_profile_id(profile_id)
+    add_comment = crud.create_comment(comment=comment, profile_id=profile_id)
+
+    flash("Your Comment has been added")
+    return redirect('/')
 
 
 # @app.route('/')
