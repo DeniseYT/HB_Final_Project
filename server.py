@@ -10,6 +10,11 @@ app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
 
+FONTS = ["Calibri", "Helvetica", "Sans-Serif"]
+FONTS_COLORS = ["Black", "Dark Grey", "Dark Blue"]
+BACKGROUND_COLORS = ["Grey", "Pink", "Dark Grey"]
+
+
 @app.route('/')
 def homepage():
     """View homepage."""
@@ -78,7 +83,7 @@ def show_login():
 
     if session['user']:
         flash('You are already logged in')
-        return redirect('/build')
+        return redirect('/build/')
 
     return render_template('account.html')
 
@@ -115,15 +120,8 @@ def user_logout():
 def build_new(username):
     """Build a new content."""
 
-    # session["user"] = user.username
     user = crud.get_user_by_username(username)
     return render_template('build_your_own.html', user=user)
-    
-    # session['user'] = user.user_id
-    # username = session['user']
-    # profile = crud.get_profile_by_user_id(user_id)
-    # return render_template('build_your_own.html', profile=profile) 
-    # second user_id = variable name
 
 
 @app.route('/build', methods=['POST'])
@@ -144,6 +142,9 @@ def build_new_content():
                                   education=education,
                                   contact=contact,
                                   user_id=user_id)
+
+    # user = crud.get_user_by_id(user_id).username
+    # session['user'] = user.username
 
     profile_about = crud.get_profile_by_about(about)
     session["about"] = profile_about.about
@@ -166,6 +167,8 @@ def build_new_content():
     flash("Your profile has been added")
 
     return redirect ('/')
+    # return redirect('/' + 'str(username)') # not working
+    # return redirect (f'/{user.username}') # not working
 
 
 @app.route('/add_comment', methods=['POST'])
@@ -181,6 +184,43 @@ def add_comment():
 
     flash("Your Comment has been added")
     return redirect('/')
+
+@app.route('/layout')
+def layout_option():
+    """User can select layout"""
+
+    return render_template("layout.html")
+
+# @app.route('/font_choice')
+# def font_choice():
+#     """User can select one font"""
+
+#     FONTS = ["Calibri", "Helvetica", "Sans-Serif"]
+
+#     font = request.args.get("font")
+#     return font
+
+
+# @app.route('/font_color_choice')
+# def font_color_choice():
+#     """User can select one font color"""
+
+#     FONTS_COLORS = ["Black", "Dark Grey", "Dark Blue"]
+
+#     font_color = request.args.get("font_color")
+#     return font_color
+
+
+# @app.route('/background_color_choice')
+# def background_color_choice():
+#     """User can select one background color"""
+
+#     BACKGROUND_COLORS = ["Grey", "Pink", "Dark Grey"]
+
+#     background_color = request.args.get("background_color")
+#     return background_color
+
+
 
 
 # @app.route('/')

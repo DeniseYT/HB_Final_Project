@@ -83,7 +83,7 @@
         </div>
         
         <div>
-                <button id="submit-btn" type="submit">Submit</button>
+            <button id="send-btn" type="submit">Send</button>
         </div>  
 </form>
 
@@ -93,11 +93,46 @@
     </div>
 </form>
 
+
+
+<form id="layout-form" action="/build" method="GET">
+    <div class="form-group">
+        <label for="font-field">Font</label>
+        <select id="font-field" name="font" class="form-control">
+          <option value="Calibri">Calibri</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Sans-Serif">Sans-Serif</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="font-color-field">Font Color</label>
+        <select id="font-color-field" name="font_color" class="form-control">
+          <option value="Black">Black</option>
+          <option value="Dark Grey">Dark Grey</option>
+          <option value="Dark Blue">Dark Blue</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="background-color-field">Font Color</label>
+        <select id="background-color-field" name="background_color" class="form-control">
+          <option value="Grey">Grey</option>
+          <option value="Pink">Pink</option>
+          <option value="Dark Grey">Dark Grey</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input id="submit-btn" type="submit"></input>
+    </div>  
+</form>
+
    
     <script>
         "use strict";
-        const submittion = document.querySelector('#submit-btn');
-        submittion.addEventListener('click', () => {
+        const sent = document.querySelector('#send-btn');
+        sent.addEventListener('click', () => {
             alert('Form submit')
         });
     </script>

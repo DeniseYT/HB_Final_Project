@@ -25,7 +25,7 @@
 
       <button id="signup-btn" type="submit">Register</button>
       <!-- <button class="signupgmail-btn" type="submit">Register With Gmail</button> -->
-      <div class="g-signin2" data-onsuccess="onSignIn">Log in with google</div>
+      <div class="g-signin2" data-onsuccess="onSignUp"></div>
     </form>
 
     
@@ -39,10 +39,17 @@
       </p>
 
       <button id="login-btn" type="submit">Log In</button>
-      <div class="g-signin2" data-onsuccess="onSignIn">Log in with google</div>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </form>
+    
+  
+    <!--<div class="g-signin2" data-onsuccess="googleLogIn"></div> -->
+    <!--<script>
+      $('a#google-login').click(function() {
+      $.getScript('https://apis.google.com/js/platform.js');
+  }) -->
 
-
+    </script>
     <script>
       function onSignIn(googleUser) {
       // Useful data for your client-side scripts:
