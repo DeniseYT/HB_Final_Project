@@ -23,7 +23,10 @@
                 <div id="about-show">{{ session.get("about") }}</div><br><br>
                 <button id="like-btn" type="like">Like</button>
                 <!-- <button id="like-btn" onClick="likeButton()">Like</button> -->
-                <text id="like-show">0</text>
+                <text id="like-show">{value}</text>
+                <!-- <p>
+                    <b>Result: </b><span id="like-show"></span>
+                  </p> -->
                 <button id="comment-btn" type="comment">Comment</button> 
                 <div id="comment-show">Awesome!</div><br>
 
@@ -38,8 +41,24 @@
                     console.log("hi script is working")
                     "use strict";
                     $('#like-btn').on('click', () => {
-                        alert('You click like');
+                        // alert('You click like');
                     })
+                </script>
+
+                <script>
+                    const button = document.getElementById('like-btn');
+                    let value = 0;
+
+                    function addLike() {
+                        let value = $('#like-show').val();
+                        value = Number(value);
+                        value = value + 1
+                        document.querySelector('#like-show').innerHTML = value;
+        
+                    }
+                    
+                    button.addEventListener('click', addLike);
+                    document.querySelector('#like-show').innerHTML = value;
                 </script>
 
         </div>
