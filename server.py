@@ -185,42 +185,6 @@ def add_comment():
     flash("Your Comment has been added")
     return redirect('/')
 
-@app.route('/layout')
-def layout_option():
-    """User can select layout"""
-
-    return render_template("layout.html")
-
-# @app.route('/font_choice')
-# def font_choice():
-#     """User can select one font"""
-
-#     FONTS = ["Calibri", "Helvetica", "Sans-Serif"]
-
-#     font = request.args.get("font")
-#     return font
-
-
-# @app.route('/font_color_choice')
-# def font_color_choice():
-#     """User can select one font color"""
-
-#     FONTS_COLORS = ["Black", "Dark Grey", "Dark Blue"]
-
-#     font_color = request.args.get("font_color")
-#     return font_color
-
-
-# @app.route('/background_color_choice')
-# def background_color_choice():
-#     """User can select one background color"""
-
-#     BACKGROUND_COLORS = ["Grey", "Pink", "Dark Grey"]
-
-#     background_color = request.args.get("background_color")
-#     return background_color
-
-
 
 
 # @app.route('/')

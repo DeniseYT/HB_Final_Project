@@ -86,3 +86,7 @@ body {
 .g-signin2 {
     display: none;
 }
+
+.color-button {
+    cursor: pointer;
+}

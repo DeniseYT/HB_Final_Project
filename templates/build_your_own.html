@@ -6,7 +6,7 @@
 
 <body>
     <h1 id="username">{{ session.get("user") }}, a web developer and designer</h1>
-</body>
+
 
 
 <form action="/build" method="POST">
@@ -83,7 +83,7 @@
         </div>
         
         <div>
-            <button id="send-btn" type="submit">Send</button>
+            <button id="submit-btn" type="submit">Submit</button>
         </div>  
 </form>
 
@@ -94,60 +94,36 @@
 </form>
 
 
-
-<form id="layout-form" action="/build" method="GET">
-    <div class="form-group">
-        <label for="font-field">Font</label>
-        <select id="font-field" name="font" class="form-control">
-          <option value="Calibri">Calibri</option>
-          <option value="Helvetica">Helvetica</option>
-          <option value="Sans-Serif">Sans-Serif</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="font-color-field">Font Color</label>
-        <select id="font-color-field" name="font_color" class="form-control">
-          <option value="Black">Black</option>
-          <option value="Dark Grey">Dark Grey</option>
-          <option value="Dark Blue">Dark Blue</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="background-color-field">Font Color</label>
-        <select id="background-color-field" name="background_color" class="form-control">
-          <option value="Grey">Grey</option>
-          <option value="Pink">Pink</option>
-          <option value="Dark Grey">Dark Grey</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <input id="submit-btn" type="submit"></input>
+<!-- <form action="/build" method="GET">
+    <div>
+        <button id="dark-mode-btn" type="submit">Dark Mode</button>
     </div>  
-</form>
-
-   
+</form> -->
+    
     <script>
         "use strict";
-        const sent = document.querySelector('#send-btn');
-        sent.addEventListener('click', () => {
+        const submittion = document.querySelector('#submit-btn');
+        submittion.addEventListener('click', () => {
             alert('Form submit')
         });
     </script>
 </div>
 
 
+<input type="button" class="color-button" value="Dark Mode" onClick="darkMode()">
+<input type="button" class="color-button" value="Light Mode" onClick="lightMode()">
 
-<!-- <button id="color">Change Color</button>
-<script>
-    "use strict";
-    const button = document.querySelector('#color');
-    button.addEventListener('click', () => {
-        alert('Change color')
-    });
-</script> -->
+    <script type="text/javascript">
+        function darkMode() {
+            document.body.style.background="black";
+        }
+        function lightMode() {
+            document.body.style.background="lightgrey";
+        }
+    </script>
+
+</body>
+
 
 
 <!-- <script src="/static/js/build_your_own_ajax.js"></script> -->
