@@ -27,13 +27,6 @@ def homepage():
     return render_template('homepage.html')
 
 
-@app.route('/test')
-def test():
-    """test."""
-
-    return render_template('test.html')
-
-
 @app.route('/<username>')
 def user_homepage(username):
     """View particular user's homepage"""
