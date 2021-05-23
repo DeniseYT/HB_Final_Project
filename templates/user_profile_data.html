@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %} User Profile {% endblock %}
+
+{% block js %}
+	<!-- <script src="/static/js/user_profile_data.jsx" type="text/jsx"></script> -->
+{% endblock %}
+
+
+{% block body %}
+    <script src="/static/js/user_profile_data.jsx" type="text/jsx"></script>
+    <h1>Denise's Profile</h1>
+
+    <div class="maincontainer-top">
+        <div id="about-div">
+            <h3>About</h3>
+            <button id="like-btn" type="like">Like</button>
+            <text id="like-show">0</text>
+            <button id="comment-btn" type="comment">Comment</button> 
+            <text id="comment-show">Awesome!</text>            
+        </div>
+
+        <div id="experience-div">
+            <h3>Experience</h3>
+            <button id="like-btn" type="like">Like</button>
+            <text id="like-show">0</text>
+            <button id="comment-btn" type="comment">Comment</button> 
+            <text id="comment-show">Awesome!</text>
+        </div>
+    </div>
+
+
+    <div class="maincontainer-middle">
+        <div id="project-div">
+            <h3>Project</h3>
+            <button id="like-btn" type="like">Like</button>
+            <text id="like-show">0</text>
+            <button id="comment-btn" type="comment">Comment</button> 
+            <text id="comment-show">Awesome!</text>
+        </div>
+
+        <div id="skill-div">
+            <h3>Skill</h3>
+            <button id="like-btn" type="like">Like</button>
+            <text id="like-show">0</text>
+            <button id="comment-btn" type="comment">Comment</button> 
+            <text id="comment-show">Awesome!</text>
+        </div>
+    </div>
+
+    <div class="maincontainer-bottom">
+        <div id="education-div">
+            <h3>Education</h3>
+            <button id="like-btn" type="like">Like</button>
+            <text id="like-show">0</text>
+            <button id="comment-btn" type="comment">Comment</button> 
+            <text id="comment-show">Awesome!</text>
+        </div>
+
+        <div id="contact-div">
+            <h3>Contact</h3>
+            <button id="like-btn" type="like">Like</button>
+            <text id="like-show">0</text>
+            <button id="comment-btn" type="comment">Comment</button> 
+            <text id="comment-show">Awesome!</text>
+        </div>
+    </div>
+   
+{% endblock %}

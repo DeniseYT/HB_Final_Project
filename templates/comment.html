@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    
+    <button id="comment-btn" onclick="myFunction()">Comment</button>
+    <textarea id="comment-text"></textarea>
+
+</div>
+
+
+
+<script>
+
+function myFunction() {
+    var element = document.getElementById('comment-show');
+    var value = element.innerHTML;
+    console.log(value)
+    document.getElementById('comment-show').innerHTML = value;
+}
+
+</script>
+
+
+</body>
+</html>
