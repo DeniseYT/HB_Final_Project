@@ -26,6 +26,13 @@ def homepage():
 
     return render_template('homepage.html')
 
+@app.route('/comment')
+def comment():
+    """View comment."""
+
+    return render_template('comment.html')
+
+
 
 @app.route('/<username>')
 def user_homepage(username):

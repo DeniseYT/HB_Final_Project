@@ -24,18 +24,32 @@
                 <text id="incrementText">0</text>
                 
                 <button id="comment-btn" type="comment">Comment</button> 
-                <div id="comment-show">Awesome!</div><br>
+                <div id="comment-show">Awesome</div><br>
+                <button id="comment-btn" onclick="myFunction()">Comment</button>
+                <textarea id="comment-text"></textarea>
 
         </div>
     <!-- </form> -->
 
 
-        
         <script>
         $('#comment-btn').on('click', () => {
             alert('Handled with jQuery!');
         })
         </script>
+
+        <script>
+     
+            function myFunction() {
+                var element = document.getElementById('comment-text');
+                var value = element.innerHTML;
+                console.log(value)
+                document.getElementById('comment-show').innerHTML = value;
+            }
+
+        </script>
+
+        
     
 
     <!-- <form action="/build" method="POST"> -->
