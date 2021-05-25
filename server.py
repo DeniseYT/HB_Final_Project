@@ -173,7 +173,8 @@ def build_new_content():
 
     flash("Your profile has been added")
 
-    return redirect ('/build/<username>')
+    # return redirect ('/build/<username>')
+    return redirect ('/Denise')
     # return redirect('/' + 'str(username)') # not working
     # return redirect (f'/{user.username}') # not working
 
