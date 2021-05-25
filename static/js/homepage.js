@@ -7,13 +7,11 @@ function incrementButton() {
     ++value;
 
     console.log(value)
-    document.getElementById('incrementText').innerHTML = value;
+    document.getElementById('incrementTextAbout').innerHTML = value;
 }
 
 
-$('#comment-btn').on('click', () => {
-    alert('Handled with jQuery!');
-})
+
 
 
 

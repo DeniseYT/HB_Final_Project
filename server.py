@@ -26,12 +26,20 @@ def homepage():
 
     return render_template('homepage.html')
 
+# Testing page
 @app.route('/comment')
 def comment():
     """View comment."""
 
     return render_template('comment.html')
 
+
+# Testing page
+@app.route('/static')
+def static_page():
+    """View someone's static profile."""
+
+    return render_template('staticpage.html')
 
 
 @app.route('/<username>')
