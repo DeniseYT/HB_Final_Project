@@ -13,73 +13,45 @@
 
     <div class="maincontainer-top">
         <div id="about-div">
-            <div>About</div>
-           
+            <h3>About</h3>
                 <textarea id="about" type="text" name="about" required></textarea>
-                <button id="like-btn" type="like">Like</button>
-                <button id="comment-btn" type="comment">Comment</button> 
-          
-                <h3 id="about-show">{{ session.get("about") }}</h3>
-                
+                <p id="about-show">{{ session.get("about") }}</p>
         </div>
 
-            
-
         <div id="experience-div">
-            <div>Experience</div>
-           
+            <h3>Experience</h3>
                 <textarea id="experience" type="text" name="experience" required></textarea>
-                <button id="like-btn" type="like">Like</button>
-                <button id="comment-btn" type="comment">Comment</button> 
-          
-                <h3 id="experience-show">{{ session.get("experience") }}</h3>
+                <h4 id="experience-show">{{ session.get("experience") }}</h4>
         </div>
     </div>
 
 
     <div class="maincontainer-middle">
         <div id="project-div">
-            <div>Project</div>
-            
+            <h3>Project</h3>
                 <textarea id="project" type="text" name="project" required></textarea>
-                <button id="like-btn" type="like">Like</button>
-                <button id="comment-btn" type="comment">Comment</button> 
-       
-                <h3 id="project-show">{{ session.get("project") }}</h3>
+                <h4 id="project-show">{{ session.get("project") }}</h4>
         </div>
                 
         <div id="skill-div">
-            <div>Skill</div>
-           
+            <h3>Skill</h3>
                 <textarea id="skill" type="text" name="skill" required></textarea>
-                <button id="like-btn" type="like">Like</button>
-                <button id="comment-btn" type="comment">Comment</button> 
-         
-                <h3 id="skill-show">{{ session.get("skill") }}</h3>
+                <h4 id="skill-show">{{ session.get("skill") }}</h4>
         </div>
     </div>
 
 
     <div class="maincontainer-bottom">
         <div id="education-div">
-            <div>Education</div>
-           
+            <h3>Education</h3>
                 <textarea id="education" type="text" name="education" required></textarea>
-                <button id="like-btn" type="like">Like</button>
-                <button id="comment-btn" type="comment">Comment</button> 
-           
-                <h3 id="education-show">{{ session.get("education") }}</h3>
-               
+                <h4 id="education-show">{{ session.get("education") }}</h4>
         </div>
                 
         <div id="contact-div">
-            <div>Contact</div>
-           
+            <h3>Contact</h3>
                 <textarea id="contact" type="text" name="contact" ></textarea>
-                <button id="like-btn" type="like">Like</button>
-                <button id="comment-btn" type="comment">Comment</button> 
-      
-            <h3 id="contact-show">{{ session.get("contact") }}</h3>
+                <h4 id="contact-show">{{ session.get("contact") }}</h4>
         </div>
         
         <div>
@@ -87,18 +59,13 @@
         </div>  
 </form>
 
-<form action="/" method="POST">
+
+<form action="/build" method="POST">
     <div>
         <button id="logout-btn" type="submit">Log Out</button>
     </div>
 </form>
 
-
-<!-- <form action="/build" method="GET">
-    <div>
-        <button id="dark-mode-btn" type="submit">Dark Mode</button>
-    </div>  
-</form> -->
     
     <script>
         "use strict";
@@ -124,8 +91,5 @@
 
 </body>
 
-
-
-<!-- <script src="/static/js/build_your_own_ajax.js"></script> -->
 
 {% endblock body%}

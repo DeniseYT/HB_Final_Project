@@ -10,10 +10,6 @@ app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
 
-FONTS = ["Calibri", "Helvetica", "Sans-Serif"]
-FONTS_COLORS = ["Black", "Dark Grey", "Dark Blue"]
-BACKGROUND_COLORS = ["Grey", "Pink", "Dark Grey"]
-
 
 @app.route('/')
 def homepage():
@@ -25,21 +21,22 @@ def homepage():
     # return render_template('homepage.html', users=users, oneUser=oneUser)
 
     return render_template('homepage.html')
+    # return render_template("staticpage.html")
 
 # Testing page
-@app.route('/comment')
-def comment():
-    """View comment."""
+# @app.route('/comment')
+# def comment():
+#     """View comment."""
 
-    return render_template('comment.html')
+#     return render_template('comment.html')
 
 
-# Testing page
-@app.route('/static')
-def static_page():
-    """View someone's static profile."""
+# # Testing page
+# @app.route('/static')
+# def static_page():
+#     """View someone's static profile."""
 
-    return render_template('staticpage.html')
+#     return render_template('staticpage.html')
 
 
 @app.route('/<username>')
@@ -49,21 +46,16 @@ def user_homepage(username):
     # session['user'] = user.username
     user = crud.get_user_by_username(username)
     return render_template('homepage.html',user=user)
+    # return render_template("staticpage.html", user=user)
 
 
-# @app.route('/profile')
-# def profile():
-#     """View profile built page."""
-
-#     return render_template('homepage.html')
-
-
-# React
-@app.route("/profile/Denise")
+# Static Page
+@app.route("/Denise")
 def show_user_profile():
     """Show particular user's profile"""
 
-    return render_template("user_profile_data.html")
+    return render_template("user_profile_page.html")
+    # return render_template("staticpage.html")
 
 
 @app.route('/account')
@@ -181,7 +173,7 @@ def build_new_content():
 
     flash("Your profile has been added")
 
-    return redirect ('/')
+    return redirect ('/build/<username>')
     # return redirect('/' + 'str(username)') # not working
     # return redirect (f'/{user.username}') # not working
 

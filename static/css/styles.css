@@ -1,7 +1,13 @@
+.maincontainer-left {
+    width:100%;
+    height: 100%;
+    display: inline-block;
+}
+
 .maincontainer-top {
     width:100%;
     height: 100%;
-    /* display: inline-block; */
+    display: inline-block;
 }
 
 #about-div {
@@ -67,18 +73,18 @@
 
 
 .build-new {
-    display: inline-block;
-    width: 400px;
-    height: 5px;
-    padding: 50px;
-    border: 2px solid white;
-    text-align: right;
-} 
+    /* display: inline-block;
+    width: 505px;
+    height: 10px; */
+    padding: 50px; 
+    /* border: 2px solid white; */
+    /* text-align: right; */
+}  
 
 .comment {
     /* display: inline-block; */
-    width: 500px;
-    height: 400px;
+    width: 505px;
+    height: 350px;
     padding: 5px;
     border: 2px solid white;
     /* text-align: left; */
