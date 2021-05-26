@@ -7,8 +7,21 @@ function incrementButton() {
     ++value;
 
     console.log(value)
-    document.getElementById('incrementTextAbout').innerHTML = value;
+    document.getElementById('incrementText').innerHTML = value;
+    // alert('Like button clicked!');
 }
+
+
+// $('#comment-btn').on('click', () => {
+//     alert('Handled with jQuery!');
+// })
+
+// function commentFunction() {
+// var element = document.getElementById('comment-text');
+// var value = element.innerHTML;
+// console.log(value)
+// document.getElementById('comment-show').innerHTML = value;
+// }
 
 
 

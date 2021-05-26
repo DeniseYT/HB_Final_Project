@@ -23,20 +23,22 @@ def homepage():
     return render_template('homepage.html')
     # return render_template("staticpage.html")
 
+
+
 # Testing page
-# @app.route('/comment')
-# def comment():
-#     """View comment."""
+@app.route('/comment')
+def comment():
+    """View comment."""
 
-#     return render_template('comment.html')
+    return render_template('comment.html')
 
 
-# # Testing page
-# @app.route('/static')
-# def static_page():
-#     """View someone's static profile."""
+# Testing page
+@app.route('/static')
+def static_page():
+    """View someone's static profile."""
 
-#     return render_template('staticpage.html')
+    return render_template('staticpage.html')
 
 
 @app.route('/<username>')
@@ -179,20 +181,28 @@ def build_new_content():
     # return redirect (f'/{user.username}') # not working
 
 
-@app.route('/add_comment', methods=['POST'])
+# @app.route('/add_comment', methods=['POST'])
+# def add_comment():
+#     """Add comment if user like to comment the content"""
+
+#     # user_email = session.get("email")
+#     # profile_id = request.form.get("profile_id")
+#     comment = request.form.get("comment")
+
+#     profile = crud.get_profile_by_profile_id(profile_id)
+#     add_comment = crud.create_comment(comment=comment, profile_id=profile_id)
+
+#     flash("Your Comment has been added")
+#     return redirect('/')
+
+
+@app.route('/', methods=['POST'])
 def add_comment():
     """Add comment if user like to comment the content"""
 
-    user_email = session.get("email")
-    profile_id = request.form.get("profile_id")
     comment = request.form.get("comment")
 
-    profile = crud.get_profile_by_profile_id(profile_id)
-    add_comment = crud.create_comment(comment=comment, profile_id=profile_id)
-
-    flash("Your Comment has been added")
-    return redirect('/')
-
+    return "Your comment has been added"
 
 
 # @app.route('/')

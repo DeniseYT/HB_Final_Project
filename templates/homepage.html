@@ -107,11 +107,17 @@
             <div class="comment">
 
                 <h3>Comment</h3>
+                <form action='/add_comment' method='post' id="comment-area">
                 <!-- <div id="comment-area"> -->
                     <textarea id="comment-text"></textarea><br>
-                    <button id="comment-btn" onclick="commentFunction()">Send</button><br><br>
-                    <text id="comment-show">show comment here!</text><br><br>
-                <!-- </div> -->
+                    <!-- <button id="comment-btn" onclick="commentFunction()">Send</button><br><br> -->
+                    <!-- <button id="comment-btn" type="submit">Send</button><br><br> -->
+                    <!-- <input type="submit"> -->
+                    <button>Submit</button>
+                    <!-- <text id="comment-show">show comment here!</text><br><br> -->
+                </form>
+                </div>
+
                 
 
                 <h5>recruiter_jenn</h5>
@@ -137,7 +143,7 @@
 </div>
 
 
-<script>
+<!-- <script>
     $('#comment-btn').on('click', () => {
         alert('Handled with jQuery!');
     })
@@ -148,6 +154,23 @@
     console.log(value)
     document.getElementById('comment-show').innerHTML = value;
     }
+</script> -->
+
+<script>
+    $('#comment-area').on('submit', (evt) => {
+        evt.preventDefault();
+        alert('Handled with jQuery!');
+
+        const addComment = {
+            'comment': $('#comment-text').val()
+        };
+
+        $.post('/add_comment', addComment, (res) => {
+            $('#comment-area').html(res.comment);
+            
+
+        });
+    });
 </script>
 
 </body>
