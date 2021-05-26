@@ -196,7 +196,7 @@ def build_new_content():
 #     return redirect('/')
 
 
-@app.route('/', methods=['POST'])
+@app.route('/add_comment', methods=['POST'])
 def add_comment():
     """Add comment if user like to comment the content"""
 
