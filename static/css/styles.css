@@ -10,6 +10,11 @@
     padding-top: 50px;
 }
 
+/* div.maincontainer-top {
+    content:url(http://placehold.it/350x150);
+ }​ */
+
+
 #about-div {
     display: inline-block;
     width: 250px;
@@ -17,7 +22,8 @@
     padding: 10px;
     border: 2px solid white;
     /* text-align: left; */
-    
+    background-image: url("/static/img");
+    /* background-color: */
 }
 
 
