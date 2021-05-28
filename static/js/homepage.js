@@ -13,21 +13,21 @@ function incrementButton() {
 
 
 
-$('#comment-area').on('submit', (evt) => {
-    evt.preventDefault();
-    alert('Handled with AJAX!');
+// $('#comment-area').on('submit', (evt) => {
+//     evt.preventDefault();
+//     alert('Handled with AJAX!');
 
-    const addComment = {
-        'comment': $('#comment-text').val()
-    };
+//     const addComment = {
+//         'comment': $('#comment-text').val()
+//     };
 
-    $.post('/add_comment', addComment, (res) => {
-        $('#comment-show').html(res);
-        console.log(res)
+//     $.post('/add_comment', addComment, (res) => {
+//         $('#comment-show').html(res);
+//         console.log(res)
         
 
-    });
-});
+//     });
+// });
 
 
 

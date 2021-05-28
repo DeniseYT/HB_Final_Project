@@ -9,18 +9,22 @@
 
 
 
-<form action="/build" method="POST">
+<!-- <form action="/build" method="POST"> -->
 
     <div class="maincontainer-top">
-        <div id="about-div">
+        <!-- <div id="about-div"> -->
             <h3>About</h3>
-                <textarea id="about" type="text" name="about" required></textarea>
-                <p id="about-show">{{ session.get("about") }}</p>
+            <form action="/add_about" method="post" id="about-div">
+                <textarea id="about" type="text" name="about"></textarea>
+                <!-- <p id="about-show">{{ session.get("about") }}</p> -->
+                <text id="about-show"></text>
+                <button id="about-btn">Send</button><br><br>
+            </form>
         </div>
 
         <div id="experience-div">
             <h3>Experience</h3>
-                <textarea id="experience" type="text" name="experience" required></textarea>
+                <textarea id="experience" type="text" name="experience"></textarea>
                 <h4 id="experience-show">{{ session.get("experience") }}</h4>
         </div>
     </div>
@@ -29,13 +33,13 @@
     <div class="maincontainer-middle">
         <div id="project-div">
             <h3>Project</h3>
-                <textarea id="project" type="text" name="project" required></textarea>
+                <textarea id="project" type="text" name="project"></textarea>
                 <h4 id="project-show">{{ session.get("project") }}</h4>
         </div>
                 
         <div id="skill-div">
             <h3>Skill</h3>
-                <textarea id="skill" type="text" name="skill" required></textarea>
+                <textarea id="skill" type="text" name="skill"></textarea>
                 <h4 id="skill-show">{{ session.get("skill") }}</h4>
         </div>
     </div>
@@ -44,7 +48,7 @@
     <div class="maincontainer-bottom">
         <div id="education-div">
             <h3>Education</h3>
-                <textarea id="education" type="text" name="education" required></textarea>
+                <textarea id="education" type="text" name="education"></textarea>
                 <h4 id="education-show">{{ session.get("education") }}</h4>
         </div>
                 
@@ -57,7 +61,7 @@
         <div>
             <button id="submit-btn" type="submit">Submit</button>
         </div>  
-</form>
+<!-- </form> -->
 
 
 <form action="/build" method="POST">
@@ -90,6 +94,24 @@
     </script>
 
 </body>
+
+<script>
+    $('#about-div').on('submit', (evt) => {
+        evt.preventDefault();
+        alert('Handled with AJAX!');
+
+        const addAbout = {
+            'about': $('#about').val()
+        };
+
+        $.post('/add_about', addAbout, (res) => {
+            $('#about-div').html(res);
+            console.log(res)
+            
+
+        });
+    });
+</script>
 
 
 {% endblock body%}

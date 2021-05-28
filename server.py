@@ -51,7 +51,7 @@ def user_homepage(username):
     # return render_template("staticpage.html", user=user)
 
 
-# Static Page
+# Static Page (for demo)
 @app.route("/Denise")
 def show_user_profile():
     """Show particular user's profile"""
@@ -153,9 +153,6 @@ def build_new_content():
                                   contact=contact,
                                   user_id=user_id)
 
-    # user = crud.get_user_by_id(user_id).username
-    # session['user'] = user.username
-
     profile_about = crud.get_profile_by_about(about)
     session["about"] = profile_about.about
 
@@ -176,10 +173,21 @@ def build_new_content():
 
     flash("Your profile has been added")
 
-    # return redirect ('/build/<username>')
-    return redirect ('/Denise')
+    return redirect ('/build/<username>')
+
+    # return redirect ('/Denise') # for demo
     # return redirect('/' + 'str(username)') # not working
     # return redirect (f'/{user.username}') # not working
+
+
+
+@app.route('/add_about', methods=['POST'])
+def build_new_profile():
+
+    about = request.form.get("about")
+
+    return about
+
 
 
 # @app.route('/add_comment', methods=['POST'])
