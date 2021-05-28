@@ -10,10 +10,6 @@
     padding-top: 50px;
 }
 
-/* div.maincontainer-top {
-    content:url(http://placehold.it/350x150);
- }​ */
-
 
 #about-div {
     display: inline-block;
@@ -22,7 +18,7 @@
     padding: 10px;
     border: 2px solid white;
     /* text-align: left; */
-    background-image: url("/static/img");
+    /* background-image: url("/static/img"); */
     /* background-color: */
 }
 
@@ -48,6 +44,7 @@
     height: 250px;
     padding: 10px;
     border: 2px solid white;
+    /* position: relative; */
 }
 
 #skill-div {
@@ -56,6 +53,7 @@
     height: 250px;
     padding: 10px;
     border: 2px solid white;
+    /* position: relative; */
 }
 
 .maincontainer-bottom {
@@ -135,6 +133,17 @@ body {
 
 .color-button {
     cursor: pointer;
+}
+
+.login-account {
+    width:200px;
+    height:200px;
+    position: fixed;
+    background-color: blue;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
 }
 
 

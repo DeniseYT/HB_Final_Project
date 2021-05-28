@@ -95,6 +95,7 @@ def show_login():
         return redirect('/build/')
 
     return render_template('account.html')
+    # return render_template('test_account.html')
 
 
 @app.route('/login', methods=['POST'])
@@ -202,7 +203,7 @@ def add_comment():
 
     comment = request.form.get("comment")
 
-    return "Your comment has been added"
+    return comment
 
 
 # @app.route('/')

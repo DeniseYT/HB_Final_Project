@@ -1,8 +1,8 @@
 "use strict";
 
 function incrementButton() {
-    var element = document.getElementById('incrementText');
-    var value = element.innerHTML;
+    let element = document.getElementById('incrementText');
+    let value = element.innerHTML;
     
     ++value;
 
@@ -12,16 +12,22 @@ function incrementButton() {
 }
 
 
-// $('#comment-btn').on('click', () => {
-//     alert('Handled with jQuery!');
-// })
 
-// function commentFunction() {
-// var element = document.getElementById('comment-text');
-// var value = element.innerHTML;
-// console.log(value)
-// document.getElementById('comment-show').innerHTML = value;
-// }
+$('#comment-area').on('submit', (evt) => {
+    evt.preventDefault();
+    alert('Handled with AJAX!');
+
+    const addComment = {
+        'comment': $('#comment-text').val()
+    };
+
+    $.post('/add_comment', addComment, (res) => {
+        $('#comment-show').html(res);
+        console.log(res)
+        
+
+    });
+});
 
 
 

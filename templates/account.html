@@ -6,11 +6,23 @@
     <meta name="google-signin-client_id" content="1028859467258-6ioql4vvepe23rpcicc6vq5so86vt7pf.apps.googleusercontent.com">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <style>
+      .login-account {
+          width:200px;
+          height:200px;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          margin-top: -100px;
+          margin-left: -100px;
+      }
+  </style>
   </head>
 
   <body>
 
-    <h2>Create an Account</h2>
+    <!-- <h2>Create an Account</h2>
     
     <form action="/account" method="POST">
       <p>
@@ -24,12 +36,18 @@
       </p>
 
       <button id="signup-btn" type="submit">Register</button>
-      <!-- <button class="signupgmail-btn" type="submit">Register With Gmail</button> -->
+      
       <div class="g-signin2" data-onsuccess="onSignUp"></div>
-    </form>
+    </form> -->
 
+
+  <div class="login-account">
+    <!-- <h2>Login to your Account</h2> -->
+
+    <div class="g-signin2" data-onsuccess="onSignIn"></div><br>
+
+    <p>or</p>
     
-    <h2>Login to your Account</h2>
     <form action="/login" method="POST">
       <p>
         Email <input type="text" name="email" required>
@@ -39,7 +57,7 @@
       </p>
 
       <button id="login-btn" type="submit">Log In</button>
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      
     </form>
     
   

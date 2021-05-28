@@ -51,7 +51,7 @@
                             Developing a supplemental web app to assist job coaches at a local non-profit Opportunities.
                         </p><br><br><br>
                         <button class="button" onClick="incrementButton()">Like</button>
-                        <text id="incrementText">0</text>
+                        <text id="incrementTextA">0</text>
                 </div>
             </div>
             
@@ -80,7 +80,7 @@
                             Javascript<br>
                             HTML<br>
                             CSS<br>
-                            Python<br>
+                            Python
                             <!-- SQLAlchemy<br> -->
                         </p><br><br><br>
                         <button class="button" onClick="incrementButton()">Like</button>
@@ -117,11 +117,14 @@
             <div style="float:right;">
                 <div class="comment">
 
-                <h3>Comment</h3>
-                <!-- <div id="comment-area"> -->
-                    <textarea id="comment-text"></textarea><br>
-                    <button id="comment-btn" onclick="commentFunction()">Send</button><br><br>
-                    <text id="comment-show">show comment here!</text><br><br>
+                    <h3>Comment</h3>
+                    <form action='/add_comment' method='post' id="comment-area">
+                    <div id="comment-area">
+                        <textarea id="comment-text"></textarea><br>
+                        <button id="comment-btn">Send</button><br><br>
+                        <text id="comment-show"></text><br><br>
+                    </form>
+                    </div>
                 
                 
 
@@ -151,16 +154,21 @@
 
 
 <script>
-    $('#comment-btn').on('click', () => {
-        alert('Handled with jQuery!');
-    })
+    $('#comment-area').on('submit', (evt) => {
+        evt.preventDefault();
+        alert('Handled with AJAX!');
 
-    function commentFunction() {
-    var element = document.getElementById('comment-text');
-    var value = element.innerHTML;
-    console.log(value)
-    document.getElementById('comment-show').innerHTML = value;
-    }
+        const addComment = {
+            'comment': $('#comment-text').val()
+        };
+
+        $.post('/add_comment', addComment, (res) => {
+            $('#comment-show').html(res);
+            console.log(res)
+            
+
+        });
+    });
 </script>
 
 
