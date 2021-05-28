@@ -10,6 +10,16 @@
     padding-top: 50px;
 }
 
+.square {
+    position: relative;
+}
+
+.like-button {
+    position: absolute;
+    bottom: 20px; 
+    left: 20px;
+}
+
 
 #about-div {
     display: inline-block;

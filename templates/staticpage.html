@@ -16,13 +16,12 @@
 <div class="container">
         <div class="row">
             
-            <!-- <div style="float:left;"> -->
                 <div class="maincontainer-left">
                     <h1>Denise,</h1>
                     <h1> a web developer</h1>
                     <h1> and designer</h1>
                 </div>
-            <!-- </div> -->
+            
         </div>
 
 </div>
@@ -32,26 +31,31 @@
 
         <div class="row">
             <div style="float:right;">
-            <!-- <div class="col-10"> -->
+
             
-                <div id="about-div" style="background-image: url(/static/img/photo-1607789287328-4178e16daedc.jpeg")>
+                <div class="square" id="about-div" style="background-image: url(/static/img/photo-1607789287328-4178e16daedc.jpeg")>
                     <h3>About</h3>
                         <p id="about-show">
                             I'm a driven professional currently transitioning into full stack web development. 
-                        </p><br><br><br>
-                        <button class="button" onClick="incrementButton()">Like</button>
-                        <text id="incrementText">0</text>
+                        </p>
+
+                        <div class="like-button">
+                            <button onClick="incrementButton('about')">Like</button>
+                            <text id="incrementText-about">0</text>
+                        </div>
                 </div>
                 
-        
-                <!-- <div class="col"> -->
-                <div id="experience-div" style="background-image: url(/static/img/daniela-beleva-Lo-SBGQjll4-unsplash.jpg")>
+    
+                <div class="square" id="experience-div" style="background-image: url(/static/img/daniela-beleva-Lo-SBGQjll4-unsplash.jpg")>
                     <h3>Experience</h3>
                         <p id="experience-show">
                             Developing a supplemental web app to assist job coaches at a local non-profit Opportunities.
-                        </p><br><br><br>
-                        <button class="button" onClick="incrementButton()">Like</button>
-                        <text id="incrementTextA">0</text>
+                        </p>
+
+                        <div class="like-button">
+                            <button onClick="incrementButton('experience')">Like</button>
+                            <text id="incrementText-experience">0</text>
+                        </div>
                 </div>
             </div>
             
@@ -65,26 +69,32 @@
     <div class="maincontainer-middle">
         <div class="row">
             <div style="float:right;">
-                <div id="project-div" style="background-image: url(/static/img/sirisvisual-nwbWM2Mc1TU-unsplash.jpg")>
+
+                <div class="square" id="project-div" style="background-image: url(/static/img/sirisvisual-nwbWM2Mc1TU-unsplash.jpg")>
                     <h3>Project</h3>
                         <p id="project-show">
                             A personal project to create an interactive, responsive, and modern display for the Boston area weather forecast.
-                        </p><br><br><br>
-                        <button class="button" onClick="incrementButton()">Like</button>
-                        <text id="incrementText">0</text>
+                        </p>
+
+                        <div class="like-button">
+                            <button onClick="incrementButton('project')">Like</button>
+                            <text id="incrementText-project">0</text>
+                        </div>
                 </div>
                         
-                <div id="skill-div" style="background-image: url(/static/img/glen-carrie-nm3gGKeDZQ0-unsplash.jpg")>
+                <div class="square" id="skill-div" style="background-image: url(/static/img/glen-carrie-nm3gGKeDZQ0-unsplash.jpg")>
                     <h3>Skill</h3>
                         <p id="skill-show">
                             Javascript<br>
                             HTML<br>
                             CSS<br>
                             Python
-                            <!-- SQLAlchemy<br> -->
-                        </p><br><br><br>
-                        <button class="button" onClick="incrementButton()">Like</button>
-                        <text id="incrementText">0</text>
+                        </p>
+
+                        <div class="like-button">
+                            <button onClick="incrementButton('skill')">Like</button>
+                            <text id="incrementText-skill">0</text>
+                        </div>
                 </div>
             </div>
         </div>
@@ -94,19 +104,28 @@
     <div class="maincontainer-bottom">
         <div class="row">
             <div style="float:right;">
-                <div id="education-div" style="background-image: url(/static/img/parrish-freeman-PQ4CHsfFlTc-unsplash.jpg")>
+
+                <div class="square" id="education-div" style="background-image: url(/static/img/parrish-freeman-PQ4CHsfFlTc-unsplash.jpg")>
                     <h3>Education</h3>
-                    <p id="education-show">Hackbright Academy</p><br><br><br>
-                    <button class="button" onClick="incrementButton()">Like</button>
-                    <text id="incrementText">0</text>
+                    <p id="education-show">Hackbright Academy
+                    </p>
+
+                    <div class="like-button">
+                        <button onClick="incrementButton('education')">Like</button>
+                        <text id="incrementText-education">0</text>
+                    </div>
                 </div>
                         
-                <div id="contact-div" style="background-image: url(/static/img/photo-1607789287328-4178e16daedc.jpeg")>
+                <div class="square" id="contact-div" style="background-image: url(/static/img/photo-1607789287328-4178e16daedc.jpeg")>
                     <h3>Contact</h3>
-                    <p id="contact-show">Linkedin</p><br><br><br>
+                    <p id="contact-show">Linkedin
+                    </p>
                     <a href="https://www.linkedin.com/in/denise-lin-7b0171117/"></a>
-                    <button class="button" onClick="incrementButton()">Like</button> 
-                    <text id="incrementText">0</text>
+
+                    <div class="like-button">
+                        <button onClick="incrementButton('contact')">Like</button> 
+                        <text id="incrementText-contact">0</text>
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,8 +145,6 @@
                     </form>
                     </div>
                 
-                
-
                 <h5>recruiter_jenn</h5>
                 <!-- <h6>Jul.01.2021, 15:25 PST</h6> -->
                 <p>I like your experiences! Let's connect!</p><br>
@@ -143,7 +160,6 @@
         <div class="row">
             <div style="float:right;">
                 <div class="build-new">
-                    <!-- <div id="build-div"> -->
                     <a href="http://0.0.0.0:5000/account">Build your own website?</a>
                     
                 </div>
