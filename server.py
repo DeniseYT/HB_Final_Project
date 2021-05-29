@@ -182,27 +182,51 @@ def build_new_content():
 
 
 @app.route('/add_about', methods=['POST'])
-def build_new_profile():
+def build_about_content():
 
     about = request.form.get("about")
 
     return about
 
 
+@app.route('/add_experience', methods=['POST'])
+def build_experience_content():
 
-# @app.route('/add_comment', methods=['POST'])
-# def add_comment():
-#     """Add comment if user like to comment the content"""
+    experience = request.form.get("experience")
 
-#     # user_email = session.get("email")
-#     # profile_id = request.form.get("profile_id")
-#     comment = request.form.get("comment")
+    return experience
 
-#     profile = crud.get_profile_by_profile_id(profile_id)
-#     add_comment = crud.create_comment(comment=comment, profile_id=profile_id)
 
-#     flash("Your Comment has been added")
-#     return redirect('/')
+@app.route('/add_project', methods=['POST'])
+def build_project_content():
+
+    project = request.form.get("project")
+
+    return project
+
+
+@app.route('/add_skill', methods=['POST'])
+def build_skill_content():
+
+    skill = request.form.get("skill")
+
+    return skill
+
+
+@app.route('/add_education', methods=['POST'])
+def build_education_content():
+
+    education = request.form.get("education")
+
+    return education
+
+
+@app.route('/add_contact', methods=['POST'])
+def build_contact_content():
+
+    contact = request.form.get("contact")
+
+    return contact
 
 
 @app.route('/add_comment', methods=['POST'])
@@ -214,24 +238,6 @@ def add_comment():
     return comment
 
 
-# @app.route('/')
-# def add_like():
-#     """Add like if user like the content"""
-
-#     like = request.args.get("like")
-
-#     return "You click like!"
-
-
-# @app.route('/', methods=['POST'])
-# def add_comment():
-#     """Add comment if user like to comment the content"""
-
-#     comment = request.form.get("comment")
-
-#     return "You click comment!"
-
-
 
 if __name__ == '__main__':
     connect_to_db(app)
@@ -239,90 +245,8 @@ if __name__ == '__main__':
 
 
 
-# @app.route('/profile/view/<username>')
-# def personal_profile(username):
-
-    # username = crud.get_user_by_username(username)
-    # user_id = get_user_by_username(username).user_id
-    # # user_id = crud.get_user_by_username(username) # same as above
-
-    # return render_template('homepage.html', user_id=user_id)
 
 
-# @app.route('/profile/view/<username>')
-# def view_personal_profile(username):
-
-    # user_id = crud.get_user_by_id(user_id)
-    # profile_id = crud.get_profile_by_profile_id(profile_id)
-    # profile_id = crud.get_profiles()
-
-    # profile_content = crud.create_profile(about=about,
-    #                               experience=experience,
-    #                               skill=skill,
-    #                               project=project,
-    #                               education=education,
-    #                               contact=contact,
-    #                               user_id=user_id)
-
-    # print(profile_about)
-
-    # if profile_about:
-    #     return f"{profile_about} profile found"
-    # else: 
-    #     return f"No profile found"
-    
-    # print(profile_id)
-    
-    # if profile_id:
-    #     return f"{profile_id} profile found"
-    # else: 
-    #     return f"No profile found"
-    
-
-
-# @app.route('/add_comment', methods=['POST'])
-# def add_comment():
-
-#     user_id = session.get("user_id")
-#     # profile_id = request.form.get("profile_id")
-#     comment = request.form.get("comment")
-
-#     user_id = crud.get_user_by_id(user_id)
-#     profile_id = crud.get_profile_by_id(profile_id)
-#     add_comment = crud.create_comment(comment=comment, like=like, prodile_id=profile_id)
-
-#     flash("Your Comment has been added")
-#     return redirect('/')
-
-# @app.route('/add_comment', methods=['POST'])
-# def add_comment():
-    # """User adding a comment to a profile"""
-
-    # user_id = session.get("user_id")
-    # # profile_id = request.form.get("profile_id")
-    # comment = request.form.get("comment")
-
-    # user_id = crud.get_user_by_id(user_id)
-    # profile_id = crud.get_profile_by_id(profile_id)
-    # add_comment = crud.create_comment(comment=comment, like=like, prodile_id=profile_id)
-
-    # flash("Your Comment has been added")
-    # return redirect('/')
-
-
-# @app.route("/", methods=['POST'])
-# def add_comment():
-#     """User adding a like to a profile"""
-
-#     user_id = session.get("user_id")
-#     profile_id = request.form.get("profile_id")
-#     like = request.form.get("like")
-
-#     profile = crud.get_blog_by_id(profile_id)
-#     add_like = crud.create_comment(comment=comment, like=like, prodile_id=profile_id)
-
-#     flash("You like it")
-#     return redirect('/')
 
  
 

@@ -8,59 +8,71 @@
     <h1 id="username">{{ session.get("user") }}, a web developer and designer</h1>
 
 
-
-<!-- <form action="/build" method="POST"> -->
-
     <div class="maincontainer-top">
-        <!-- <div id="about-div"> -->
+        
             <h3>About</h3>
             <form action="/add_about" method="post" id="about-div">
-                <textarea id="about" type="text" name="about"></textarea>
-                <!-- <p id="about-show">{{ session.get("about") }}</p> -->
-                <text id="about-show"></text>
+                <textarea id="about" type="text" name="about"></textarea><br>
                 <button id="about-btn">Send</button><br><br>
+                <text id="about-show"></text>
+                
             </form>
         </div>
 
-        <div id="experience-div">
+
             <h3>Experience</h3>
-                <textarea id="experience" type="text" name="experience"></textarea>
-                <h4 id="experience-show">{{ session.get("experience") }}</h4>
+            <form action="/add_experience" method="post" id="experience-div">
+                <textarea id="experience" type="text" name="experience"></textarea><br>
+                <button id="experience-btn">Send</button><br><br>
+                <text id="experience-show"></text>
+            </form>
         </div>
     </div>
 
 
     <div class="maincontainer-middle">
-        <div id="project-div">
+
             <h3>Project</h3>
-                <textarea id="project" type="text" name="project"></textarea>
-                <h4 id="project-show">{{ session.get("project") }}</h4>
+            <form action="/add_project" method="post" id="project-div">
+                <textarea id="project" type="text" name="project"></textarea><br>
+                <button id="project-btn">Send</button><br><br>
+                <text id="project-show"></text>
+            </form>
         </div>
                 
-        <div id="skill-div">
+
             <h3>Skill</h3>
-                <textarea id="skill" type="text" name="skill"></textarea>
-                <h4 id="skill-show">{{ session.get("skill") }}</h4>
+            <form action="/add_skill" method="post" id="skill-div">
+                <textarea id="skill" type="text" name="skill"></textarea><br>
+                <button id="skill-btn">Send</button><br><br>
+                <text id="skill-show"></text>
+            </form>
         </div>
     </div>
 
 
     <div class="maincontainer-bottom">
-        <div id="education-div">
+
             <h3>Education</h3>
-                <textarea id="education" type="text" name="education"></textarea>
-                <h4 id="education-show">{{ session.get("education") }}</h4>
+            <form action="/add_education" method="post" id="education-div">
+                <textarea id="education" type="text" name="education"></textarea><br>
+                <button id="education-btn">Send</button><br><br>
+                <text id="education-show"></text>
+            </form>
         </div>
                 
-        <div id="contact-div">
+        
             <h3>Contact</h3>
-                <textarea id="contact" type="text" name="contact" ></textarea>
-                <h4 id="contact-show">{{ session.get("contact") }}</h4>
+            <form action="/add_contact" method="post" id="contact-div">
+                <textarea id="contact" type="text" name="contact" ></textarea><br>
+                <button id="contact-btn">Send</button><br><br>
+                <text id="contact-show"></text>
+            </form>
         </div>
         
-        <div>
+        <!-- <div>
             <button id="submit-btn" type="submit">Submit</button>
-        </div>  
+        </div>   -->
 <!-- </form> -->
 
 
@@ -71,14 +83,14 @@
 </form>
 
     
-    <script>
+    <!-- <script>
         "use strict";
         const submittion = document.querySelector('#submit-btn');
         submittion.addEventListener('click', () => {
             alert('Form submit')
         });
     </script>
-</div>
+</div> -->
 
 
 <input type="button" class="color-button" value="Dark Mode" onClick="darkMode()">
@@ -96,6 +108,8 @@
 </body>
 
 <script>
+    "use strict";
+
     $('#about-div').on('submit', (evt) => {
         evt.preventDefault();
         alert('Handled with AJAX!');
@@ -105,12 +119,87 @@
         };
 
         $.post('/add_about', addAbout, (res) => {
-            $('#about-div').html(res);
+            $('#about-show').html(res);
             console.log(res)
-            
-
         });
     });
+
+
+    $('#experience-div').on('submit', (evt) => {
+        evt.preventDefault();
+        alert('Handled with AJAX!');
+
+        const addExperience = {
+            'experience': $('#experience').val()
+        };
+
+        $.post('/add_experience', addExperience, (res) => {
+            $('#experience-show').html(res);
+            console.log(res)
+        });
+    });
+
+
+    $('#project-div').on('submit', (evt) => {
+        evt.preventDefault();
+        alert('Handled with AJAX!');
+
+        const addProject = {
+            'project': $('#project').val()
+        };
+
+        $.post('/add_project', addProject, (res) => {
+            $('#project-show').html(res);
+            console.log(res)
+        });
+    });
+
+
+    $('#skill-div').on('submit', (evt) => {
+        evt.preventDefault();
+        alert('Handled with AJAX!');
+
+        const addSkill = {
+            'skill': $('#skill').val()
+        };
+
+        $.post('/add_skill', addSkill, (res) => {
+            $('#skill-show').html(res);
+            console.log(res)
+        });
+    });
+
+
+    $('#education-div').on('submit', (evt) => {
+        evt.preventDefault();
+        alert('Handled with AJAX!');
+
+        const addEducation = {
+            'education': $('#education').val()
+        };
+
+        $.post('/add_education', addEducation, (res) => {
+            $('#education-show').html(res);
+            console.log(res)
+        });
+    });
+
+
+    $('#contact-div').on('submit', (evt) => {
+        evt.preventDefault();
+        alert('Handled with AJAX!');
+
+        const addContact = {
+            'contact': $('#contact').val()
+        };
+
+        $.post('/add_contact', addContact, (res) => {
+            $('#contact-show').html(res);
+            console.log(res)
+        });
+    });
+
+
 </script>
 
 
