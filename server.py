@@ -15,40 +15,15 @@ app.jinja_env.undefined = StrictUndefined
 def homepage():
     """View homepage."""
 
-    # just testing ok
-    # users = crud.get_users()
-    # oneUser = crud.get_user_by_username("test1") 
-    # return render_template('homepage.html', users=users, oneUser=oneUser)
-
     return render_template('homepage.html')
-    # return render_template("staticpage.html")
-
-
-
-# Testing page
-@app.route('/comment')
-def comment():
-    """View comment."""
-
-    return render_template('comment.html')
-
-
-# Testing page
-@app.route('/static')
-def static_page():
-    """View someone's static profile."""
-
-    return render_template('staticpage.html')
 
 
 @app.route('/<username>')
 def user_homepage(username):
     """View particular user's homepage"""
 
-    # session['user'] = user.username
     user = crud.get_user_by_username(username)
     return render_template('homepage.html',user=user)
-    # return render_template("staticpage.html", user=user)
 
 
 # Static Page (for demo)
@@ -57,7 +32,6 @@ def show_user_profile():
     """Show particular user's profile"""
 
     return render_template("user_profile_page.html")
-    # return render_template("staticpage.html")
 
 
 @app.route('/account')
@@ -95,7 +69,6 @@ def show_login():
         return redirect('/build/')
 
     return render_template('account.html')
-    # return render_template('test_account.html')
 
 
 @app.route('/login', methods=['POST'])
@@ -120,8 +93,7 @@ def user_login():
 
 @app.route('/logout')
 def user_logout():
-    # remove the username from the session if it's there
-    # session.pop('username', None)
+    
     del session['user']
     return redirect('/')
 
