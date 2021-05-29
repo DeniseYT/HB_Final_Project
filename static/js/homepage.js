@@ -13,21 +13,6 @@ function incrementButton(id) {
 
 
 
-// $('#comment-area').on('submit', (evt) => {
-//     evt.preventDefault();
-//     alert('Handled with AJAX!');
-
-//     const addComment = {
-//         'comment': $('#comment-text').val()
-//     };
-
-//     $.post('/add_comment', addComment, (res) => {
-//         $('#comment-show').html(res);
-//         console.log(res)
-        
-
-//     });
-// });
 
 
 
