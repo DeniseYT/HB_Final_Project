@@ -105,6 +105,7 @@ def build_new(username):
 
     user = crud.get_user_by_username(username)
     return render_template('build_your_own.html', user=user)
+    # return render_template('test_build.html', user=user)
 
 
 @app.route('/build', methods=['POST'])
