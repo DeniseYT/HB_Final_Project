@@ -2,33 +2,47 @@
 
 {% block title %} Build Your Own {% endblock %}
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/styles.css">
 
 {% block body %}
 
 <body>
-    <h1 id="username">{{ session.get("user") }}, a web developer and designer</h1>
+    <div class="container">
+        <div class="row">
+            
+            <div class="maincontainer-left">
+                <h1 id="username">{{ session.get("user") }}, a web developer and designer</h1>
 
+    <div class="container">
+        <div class="maincontainer-top">
+    
+            <div class="row">
+                <div style="float:right;">
 
-    <div class="maincontainer-top">
-        
-            <h3>About</h3>
-            <form action="/add_about" method="post" id="about-div">
-                <textarea id="about" type="text" name="about"></textarea><br>
-                <button id="about-btn">Send</button><br><br>
-                <text id="about-show"></text>
-                
-            </form>
+                    <form action="/add_about" method="post" id="about-div">
+                        <h3>About</h3>
+                        <div class="square" id="about-div" style="background-image: url(/static/img/photo-1607789287328-4178e16daedc.jpeg")>
+                            <textarea id="about" type="text" name="about"></textarea><br>
+                            <button id="about-btn">Send</button><br><br>
+                            <text id="about-show"></text>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+
+                    <form action="/add_experience" method="post" id="experience-div">
+                        <h3>Experience</h3>
+                        <div class="square" id="experience-div" style="background-image: url(/static/img/daniela-beleva-Lo-SBGQjll4-unsplash.jpg")>
+                            <textarea id="experience" type="text" name="experience"></textarea><br>
+                            <button id="experience-btn">Send</button><br><br>
+                            <text id="experience-show"></text>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-
-            <h3>Experience</h3>
-            <form action="/add_experience" method="post" id="experience-div">
-                <textarea id="experience" type="text" name="experience"></textarea><br>
-                <button id="experience-btn">Send</button><br><br>
-                <text id="experience-show"></text>
-            </form>
-        </div>
-    </div>
 
 
     <div class="maincontainer-middle">

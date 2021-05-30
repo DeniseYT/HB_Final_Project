@@ -39,7 +39,7 @@ def all_users():
     """View all users."""
 
     return render_template('account.html')
-
+    
 
 @app.route('/account', methods=['POST'])
 def register_users():
@@ -69,6 +69,7 @@ def show_login():
         return redirect('/build/')
 
     return render_template('account.html')
+    
 
 
 @app.route('/login', methods=['POST'])

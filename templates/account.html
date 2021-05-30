@@ -1,64 +1,86 @@
 <!doctype html>
+
 <html>
+  
+  <title>Account</title>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="google-signin-client_id" content="1028859467258-6ioql4vvepe23rpcicc6vq5so86vt7pf.apps.googleusercontent.com">
 
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css"> -->
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <style>
-      .login-account {
-          width:200px;
-          height:200px;
-          position: fixed;
+      .account {
+          width:300px;
+          height:300px;
+          position: absolute;
           top: 50%;
           left: 50%;
-          margin-top: -100px;
+          margin-top: -200px;
           margin-left: -100px;
+      }
+
+      body {
+      background-color: #D3D3D3;
+      
+      }
+
+      h2, h3, h4, h5, h6 {
+      font-family: sans-serif;
       }
   </style>
   </head>
 
   <body>
 
-    <!-- <h2>Create an Account</h2>
-    
-    <form action="/account" method="POST">
-      <p>
-        Username <input type="text" name="username" required>
-      </p>
-      <p>
-        Email <input type="text" name="email" required>
-      </p>
-      <p>
-        Password <input type="password" name="password" required>
-      </p>
+    <div class="account">
 
-      <button id="signup-btn" type="submit">Register</button>
+      <h2>Create an Account</h2>
       
-      <div class="g-signin2" data-onsuccess="onSignUp"></div>
-    </form> -->
+        <form action="/account" method="POST">
+          <p>
+            User <input type="text" name="username" required>
+          </p>
+          <p>
+            Email <input type="text" name="email" required>
+          </p>
+          <p>
+            Password <input type="password" name="password" required>
+          </p>
+
+          <button id="signup-btn" type="submit">Register</button>
+          
+          <!-- <div class="g-signin2" data-onsuccess="onSignUp"></div> -->
+        </form>
 
 
-  <div class="login-account">
-    <!-- <h2>Login to your Account</h2> -->
+      <h2>Login to your Account</h2>
 
-    <div class="g-signin2" data-onsuccess="onSignIn"></div><br>
+        <form action="/login" method="POST">
+          <p>
+            Email <input type="text" name="email" value="" required>
+          </p>
+          
+          <p>
+            Password <input type="password" name="password" required>
+          </p>
 
-    <p>or</p>
-    
-    <form action="/login" method="POST">
-      <p>
-        Email <input type="text" name="email" required>
-      </p>
-      <p>
-        Password <input type="password" name="password" required>
-      </p>
+        <button id="login-btn" type="submit">Log In</button><br><br>
+     
 
-      <button id="login-btn" type="submit">Log In</button>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+      <!-- <div class="signup_link">
+        <a href="#">Sign Up</a>
+      </div> -->
       
     </form>
+  </div>
     
   
     <!--<div class="g-signin2" data-onsuccess="googleLogIn"></div> -->
