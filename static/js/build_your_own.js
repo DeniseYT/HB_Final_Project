@@ -2,7 +2,7 @@
 
 $('#about-div').on('submit', (evt) => {
     evt.preventDefault();
-    alert('Handled with AJAX!');
+    // alert('Handled with AJAX!');
 
     const addAbout = {
         'about': $('#about').val()
@@ -17,7 +17,7 @@ $('#about-div').on('submit', (evt) => {
 
 $('#experience-div').on('submit', (evt) => {
     evt.preventDefault();
-    alert('Handled with AJAX!');
+    // alert('Handled with AJAX!');
 
     const addExperience = {
         'experience': $('#experience').val()
@@ -32,7 +32,7 @@ $('#experience-div').on('submit', (evt) => {
 
 $('#project-div').on('submit', (evt) => {
     evt.preventDefault();
-    alert('Handled with AJAX!');
+    // alert('Handled with AJAX!');
 
     const addProject = {
         'project': $('#project').val()
@@ -47,7 +47,7 @@ $('#project-div').on('submit', (evt) => {
 
 $('#skill-div').on('submit', (evt) => {
     evt.preventDefault();
-    alert('Handled with AJAX!');
+    // alert('Handled with AJAX!');
 
     const addSkill = {
         'skill': $('#skill').val()
@@ -62,7 +62,7 @@ $('#skill-div').on('submit', (evt) => {
 
 $('#education-div').on('submit', (evt) => {
     evt.preventDefault();
-    alert('Handled with AJAX!');
+    // alert('Handled with AJAX!');
 
     const addEducation = {
         'education': $('#education').val()
@@ -77,7 +77,7 @@ $('#education-div').on('submit', (evt) => {
 
 $('#contact-div').on('submit', (evt) => {
     evt.preventDefault();
-    alert('Handled with AJAX!');
+    // alert('Handled with AJAX!');
 
     const addContact = {
         'contact': $('#contact').val()
@@ -88,5 +88,32 @@ $('#contact-div').on('submit', (evt) => {
         console.log(res)
     });
 });
+
+
+// $('#submit-btn').on('submit', (evt) => {
+//     evt.preventDefault();
+//     alert('Handled with AJAX!');
+
+//     const submittion = {
+//         'about': $('#about').val(),
+//         // 'experience': $('#experience').val(),
+//         // 'project': $('#project').val(),
+//         // 'skill': $('#skill').val(),
+//         // 'education': $('#education').val(),
+//         // 'contact': $('#contact').val()
+//     };
+
+//     $.post('/Denise', submittion, (res) => {
+//         $('#about-show').html(res);
+//         // $('#experience-show').html(res);
+//         // $('#project-show').html(res);
+//         // $('#skill-show').html(res);
+//         // $('#education-show').html(res);
+//         // $('#contact-show').html(res);
+//         console.log(res)
+//     });
+// });
+
+
 
 

@@ -104,7 +104,7 @@
                 <div class="square" id="contact-div" style="background-image: url(/static/img/photo-1607789287328-4178e16daedc.jpeg")>
                     <h3>Contact</h3>
                         <form action="/add_contact" method="post">
-                            <textarea id="contact" type="text" name="contact" ></textarea><br>
+                            <textarea id="contact" type="text" name="contact"></textarea><br>
                             <button id="contact-btn">Send</button><br><br>
                             <text id="contact-show"></text>
                         </form>
@@ -117,11 +117,13 @@
 </div>
 
 <div>
-    <button id="submit-btn" type="submit">Submit</button>
+    <form action="/Denise" method="post">
+        <button id="submit-btn" type="submit">Submit</button>
+    </form>
 </div>
 
 
-<form action="/build" method="post">
+<form action="/" method="post">
     <div>
         <button id="logout-btn" type="submit">Log Out</button>
     </div>

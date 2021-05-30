@@ -17,17 +17,23 @@ def homepage():
 
     return render_template('homepage.html')
 
+# when user logout, redirect to homepage
+@app.route('/', methods=['POST'])
+def show_homepage():
+    """View homepage."""
 
-@app.route('/<username>')
-def user_homepage(username):
-    """View particular user's homepage"""
-
-    user = crud.get_user_by_username(username)
-    return render_template('homepage.html',user=user)
+    return render_template('homepage.html')
 
 
 # Static Page (for demo)
 @app.route("/Denise")
+def user_profile():
+    """Show particular user's profile"""
+
+    return render_template("user_profile_page.html")
+
+# Static Page (for demo)
+@app.route("/Denise", methods=['POST'])
 def show_user_profile():
     """Show particular user's profile"""
 
@@ -35,7 +41,7 @@ def show_user_profile():
 
 
 @app.route('/account')
-def all_users():
+def account_page():
     """View all users."""
 
     return render_template('account.html')
@@ -99,60 +105,34 @@ def user_logout():
     return redirect('/')
 
 
+# when user sign in, username shows in url
 @app.route('/build/<username>')
 def build_new(username):
     """Build a new content."""
 
     user = crud.get_user_by_username(username)
     return render_template('build_your_own.html', user=user)
-    # return render_template('test_build.html', user=user)
+    
 
-
-@app.route('/build', methods=['POST'])
+@app.route('/build')
 def build_new_content():
-
-    about = request.form.get("about") #dictionary key "about"
-    experience = request.form.get("experience")
-    project = request.form.get("project")
-    skill = request.form.get("skill")
-    education = request.form.get("education")
-    contact = request.form.get("contact")
-    user_id = session.get("user_id")
-
-    profile_content = crud.create_profile(about=about,
-                                  experience=experience,
-                                  skill=skill,
-                                  project=project,
-                                  education=education,
-                                  contact=contact,
-                                  user_id=user_id)
-
-    profile_about = crud.get_profile_by_about(about)
-    session["about"] = profile_about.about
-
-    profile_experience = crud.get_profile_by_experience(experience)
-    session["experience"] = profile_experience.experience
-
-    profile_project = crud.get_profile_by_project(project)
-    session["project"] = profile_project.project
-
-    profile_skill = crud.get_profile_by_skill(skill)
-    session["skill"] = profile_skill.skill
-
-    profile_education = crud.get_profile_by_education(education)
-    session["education"] = profile_education.education
-
-    profile_contact = crud.get_profile_by_contact(contact)
-    session["contact"] = profile_contact.contact
-
-    flash("Your profile has been added")
 
     return redirect ('/build/<username>')
 
-    # return redirect ('/Denise') # for demo
-    # return redirect('/' + 'str(username)') # not working
-    # return redirect (f'/{user.username}') # not working
 
+# for ajax submittion to homepage
+# @app.route('/', methods=['POST'])
+# def build_content():
+
+#     about = request.form.get("about")
+#     # experience = request.form.get("experience")
+#     # project = request.form.get("project")
+#     # skill = request.form.get("skill")
+#     # education = request.form.get("education")
+#     # contact = request.form.get("contact")
+
+#     # return about, experience, project, skill, education, contact
+#     return about
 
 
 @app.route('/add_about', methods=['POST'])
@@ -216,6 +196,51 @@ def add_comment():
 if __name__ == '__main__':
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)
+
+
+# Query data from SQLAlchemy
+# @app.route('/build', methods=['POST'])
+# def build_new_content():
+
+    # about = request.form.get("about") #dictionary key "about"
+    # experience = request.form.get("experience")
+    # project = request.form.get("project")
+    # skill = request.form.get("skill")
+    # education = request.form.get("education")
+    # contact = request.form.get("contact")
+    # user_id = session.get("user_id")
+
+    # profile_content = crud.create_profile(about=about,
+    #                               experience=experience,
+    #                               skill=skill,
+    #                               project=project,
+    #                               education=education,
+    #                               contact=contact,
+    #                               user_id=user_id)
+
+    # profile_about = crud.get_profile_by_about(about)
+    # session["about"] = profile_about.about
+
+    # profile_experience = crud.get_profile_by_experience(experience)
+    # session["experience"] = profile_experience.experience
+
+    # profile_project = crud.get_profile_by_project(project)
+    # session["project"] = profile_project.project
+
+    # profile_skill = crud.get_profile_by_skill(skill)
+    # session["skill"] = profile_skill.skill
+
+    # profile_education = crud.get_profile_by_education(education)
+    # session["education"] = profile_education.education
+
+    # profile_contact = crud.get_profile_by_contact(contact)
+    # session["contact"] = profile_contact.contact
+
+    # flash("Your profile has been added")
+
+    # return redirect ('/build/<username>')
+
+    
 
 
 
