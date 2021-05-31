@@ -25,6 +25,15 @@ def show_homepage():
     return render_template('homepage.html')
 
 
+# testing
+@app.route('/bootstrap')
+def show_bootstrap():
+    """View homepage."""
+
+    return render_template('bootstrap.html')
+
+
+
 # Static Page (for demo)
 @app.route("/Denise")
 def user_profile():
@@ -196,6 +205,8 @@ def add_comment():
 if __name__ == '__main__':
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)
+
+
 
 
 # Query data from SQLAlchemy

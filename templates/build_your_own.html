@@ -10,14 +10,27 @@
 
 
 <body>
-    <!-- <h1 id="username">{{ session.get("user") }}, a web developer and designer</h1> -->
-    <!-- <script src="/static/js/homepage.js" type="text/javascript"></script> -->
+
+
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <input type="button" class="btn btn-outline-success" value="Dark Mode" onClick="darkMode()">
+                <input type="button" class="btn btn-outline-success" value="Light Mode" onClick="lightMode()"> 
+                <form action="/" method="post">
+                    <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
+                </form> 
+            </div>
+        </form>
+    </nav>
+
+
 
     <div class="container">
         <div class="row">
             
                 <div class="maincontainer-left">
-                    <h1>Denise,</h1>
+                    <h1 id="username">{{ session.get("user") }},</h1>
                     <h1> a web developer</h1>
                     <h1> and designer</h1>
                 </div>
@@ -38,6 +51,11 @@
                         <form action="/add_about" method="post">
                             <textarea id="about" type="text" name="about"></textarea><br>
                             <button id="about-btn">Send</button><br><br>
+                            <!-- <button type="button" class="btn btn-primary">Send</button> -->
+                            <!-- <nav class="navbar navbar-light bg-light">
+                                <form class="form-inline">
+                                    <button class="btn btn-outline-success" type="button">Send</button><br><br>
+                                </form> -->
                             <text id="about-show"></text>
                         </form>
 
@@ -116,24 +134,13 @@
 
 </div>
 
-<div>
+<!-- <div>
     <form action="/Denise" method="post">
         <button id="submit-btn" type="submit">Submit</button>
     </form>
-</div>
+</div> -->
 
 
-<form action="/" method="post">
-    <div>
-        <button id="logout-btn" type="submit">Log Out</button>
-    </div>
-</form>
-
-
-
-
-<input type="button" class="color-button" value="Dark Mode" onClick="darkMode()">
-<input type="button" class="color-button" value="Light Mode" onClick="lightMode()">
 
     <script type="text/javascript">
         function darkMode() {
