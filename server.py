@@ -123,6 +123,11 @@ def build_new(username):
     return render_template('build_your_own.html', user=user)
     
 
+@app.route('/build', methods=['POST'])
+def build_logout():
+
+    return redirect ('/')
+
 @app.route('/build')
 def build_new_content():
 
@@ -130,18 +135,19 @@ def build_new_content():
 
 
 # for ajax submittion to homepage
-# @app.route('/', methods=['POST'])
-# def build_content():
+@app.route('/submittion', methods=['POST'])
+def build_content():
 
-#     about = request.form.get("about")
-#     # experience = request.form.get("experience")
-#     # project = request.form.get("project")
-#     # skill = request.form.get("skill")
-#     # education = request.form.get("education")
-#     # contact = request.form.get("contact")
+    about = request.form.get("about")
+    # experience = request.form.get("experience")
+    # project = request.form.get("project")
+    # skill = request.form.get("skill")
+    # education = request.form.get("education")
+    # contact = request.form.get("contact")
 
-#     # return about, experience, project, skill, education, contact
-#     return about
+    # return about, experience, project, skill, education, contact
+    # return about
+    return redirect ('/Denise')
 
 
 @app.route('/add_about', methods=['POST'])

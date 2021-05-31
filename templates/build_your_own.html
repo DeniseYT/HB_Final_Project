@@ -16,7 +16,7 @@
             <div class="btn-group" role="group" aria-label="Basic example">
                 <input type="button" class="btn btn-outline-success" value="Dark Mode" onClick="darkMode()">
                 <input type="button" class="btn btn-outline-success" value="Light Mode" onClick="lightMode()"> 
-                <form action="/" method="post">
+                <form action="/build" method="post">
                     <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
                 </form> 
             </div>
@@ -47,28 +47,32 @@
             
                 <div class="square" id="about-div" style="background-image: url(/static/img/photo-1607789287328-4178e16daedc.jpeg")>
                     <h3>About</h3>
-                        <form action="/add_about" method="post">
-                            <textarea id="about" type="text" name="about"></textarea><br>
-                            <button id="about-btn">Send</button><br><br>
-                            <!-- <button type="button" class="btn btn-primary">Send</button> -->
-                            <!-- <nav class="navbar navbar-light bg-light">
-                                <form class="form-inline">
-                                    <button class="btn btn-outline-success" type="button">Send</button><br><br>
-                                </form> -->
-                            <text id="about-show"></text>
-                        </form>
-
-                        
+                        <div class="send-button">
+                            <form action="/add_about" method="post">
+                                <text id="about-show"></text><br><br>
+                                <textarea id="about" type="text" name="about"></textarea><br>
+                                <button id="about-btn">Send</button><br><br>
+                                <!-- <button type="button" class="btn btn-primary">Send</button> -->
+                                <!-- <nav class="navbar navbar-light bg-light">
+                                    <form class="form-inline">
+                                        <button class="btn btn-outline-success" type="button">Send</button><br><br>
+                                    </form> -->
+                                <!-- <text id="about-show"></text> -->
+                            </form>
+            
+                        </div>
                 </div>
                 
     
                 <div class="square" id="experience-div" style="background-image: url(/static/img/daniela-beleva-Lo-SBGQjll4-unsplash.jpg")>
                     <h3>Experience</h3>
-                        <form action="/add_experience" method="post">
-                            <textarea id="experience" type="text" name="experience"></textarea><br>
-                            <button id="experience-btn">Send</button><br><br>
-                            <text id="experience-show"></text>
-                        </form>
+                        <div class="send-button">
+                            <form action="/add_experience" method="post">
+                                <text id="experience-show"></text><br><br>
+                                <textarea id="experience" type="text" name="experience"></textarea><br>
+                                <button id="experience-btn">Send</button><br><br>
+                            </form>
+                        </div>
       
                 </div>
             </div>
@@ -85,20 +89,26 @@
 
                 <div class="square" id="project-div" style="background-image: url(/static/img/sirisvisual-nwbWM2Mc1TU-unsplash.jpg")>
                     <h3>Project</h3>
-                        <form action="/add_project" method="post">
-                            <textarea id="project" type="text" name="project"></textarea><br>
-                            <button id="project-btn">Send</button><br><br>
-                            <text id="project-show"></text>
-                        </form>     
+                        <div class="send-button">
+                            <form action="/add_project" method="post">
+                                <text id="project-show"></text><br><br>
+                                <textarea id="project" type="text" name="project"></textarea><br>
+                                <button id="project-btn">Send</button><br><br>
+                                
+                            </form>
+                        </div>     
                 </div>
                         
                 <div class="square" id="skill-div" style="background-image: url(/static/img/glen-carrie-nm3gGKeDZQ0-unsplash.jpg")>
                     <h3>Skill</h3>
-                        <form action="/add_skill" method="post">
-                            <textarea id="skill" type="text" name="skill"></textarea><br>
-                            <button id="skill-btn">Send</button><br><br>
-                            <text id="skill-show"></text>
-                        </form>
+                        <div class="send-button">
+                            <form action="/add_skill" method="post">
+                                <text id="skill-show"></text><br><br>
+                                <textarea id="skill" type="text" name="skill"></textarea><br>
+                                <button id="skill-btn">Send</button><br><br>
+                                
+                            </form>
+                        </div>
                 </div>
             </div>
         </div>
@@ -111,20 +121,26 @@
 
                 <div class="square" id="education-div" style="background-image: url(/static/img/parrish-freeman-PQ4CHsfFlTc-unsplash.jpg")>
                     <h3>Education</h3>
-                        <form action="/add_education" method="post">
-                            <textarea id="education" type="text" name="education"></textarea><br>
-                            <button id="education-btn">Send</button><br><br>
-                            <text id="education-show"></text>
-                        </form>   
+                        <div class="send-button">
+                            <form action="/add_education" method="post">
+                                <text id="education-show"></text><br><br>
+                                <textarea id="education" type="text" name="education"></textarea><br>
+                                <button id="education-btn">Send</button><br><br>
+                                
+                            </form>  
+                        </div> 
                 </div>
                         
                 <div class="square" id="contact-div" style="background-image: url(/static/img/photo-1607789287328-4178e16daedc.jpeg")>
                     <h3>Contact</h3>
-                        <form action="/add_contact" method="post">
-                            <textarea id="contact" type="text" name="contact"></textarea><br>
-                            <button id="contact-btn">Send</button><br><br>
-                            <text id="contact-show"></text>
-                        </form>
+                        <div class="send-button">
+                            <form action="/add_contact" method="post">
+                                <text id="contact-show"></text><br><br>
+                                <textarea id="contact" type="text" name="contact"></textarea><br>
+                                <button id="contact-btn">Send</button><br><br>
+                                
+                            </form>
+                        </div>
                 </div>
             </div>
         </div>
@@ -137,7 +153,7 @@
 <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <form action="/Denise" method="post">
+            <form action="/submittion" method="post">
                 <button class="btn btn-secondary" id="submit-btn" type="submit">Submit</button>
             </form>
         </div>
@@ -148,7 +164,7 @@
 </body>
 
 
-<script src="/static/js/build_your_own.js"></script>
+<script src="/static/js/ajax.js"></script>
 
 {% endblock body%}
 

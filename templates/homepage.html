@@ -43,6 +43,7 @@
                             <button onClick="incrementButton('about')">Like</button>
                             <text id="incrementText-about">0</text>
                         </div>
+                        
                 </div>
                 
     
@@ -169,25 +170,7 @@
 </div>
 
 
-<script>
-    $('#comment-area').on('submit', (evt) => {
-        evt.preventDefault();
-        alert('Handled with AJAX!');
-
-        const addComment = {
-            'comment': $('#comment-text').val()
-        };
-
-        $.post('/add_comment', addComment, (res) => {
-            $('#comment-show').html(res);
-            console.log(res)
-            
-
-        });
-    });
-</script>
-
-
+<script src="/static/js/ajax.js"></script>
 
 </body>
  
