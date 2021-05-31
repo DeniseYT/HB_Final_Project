@@ -13,6 +13,14 @@ function incrementButton(id) {
 
 
 
+function darkMode() {
+    document.body.style.background="black";
+}
+function lightMode() {
+    document.body.style.background="lightgrey";
+}
+
+
 
 
 
