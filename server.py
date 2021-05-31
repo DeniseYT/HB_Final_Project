@@ -17,21 +17,13 @@ def homepage():
 
     return render_template('homepage.html')
 
+
 # when user logout, redirect to homepage
 @app.route('/', methods=['POST'])
 def show_homepage():
     """View homepage."""
 
     return render_template('homepage.html')
-
-
-# testing
-@app.route('/bootstrap')
-def show_bootstrap():
-    """View homepage."""
-
-    return render_template('bootstrap.html')
-
 
 
 # Static Page (for demo)
@@ -42,6 +34,7 @@ def user_profile():
     return render_template("user_profile_page.html")
 
 # Static Page (for demo)
+# when user submit, redirect to /Denise
 @app.route("/Denise", methods=['POST'])
 def show_user_profile():
     """Show particular user's profile"""
@@ -135,19 +128,19 @@ def build_new_content():
 
 
 # for ajax submittion to homepage
-@app.route('/submittion', methods=['POST'])
-def build_content():
+# @app.route('/submittion', methods=['POST'])
+# def build_content():
 
-    about = request.form.get("about")
-    # experience = request.form.get("experience")
-    # project = request.form.get("project")
-    # skill = request.form.get("skill")
-    # education = request.form.get("education")
-    # contact = request.form.get("contact")
+#     about = request.form.get("about")
+#     # experience = request.form.get("experience")
+#     # project = request.form.get("project")
+#     # skill = request.form.get("skill")
+#     # education = request.form.get("education")
+#     # contact = request.form.get("contact")
 
-    # return about, experience, project, skill, education, contact
-    # return about
-    return redirect ('/Denise')
+#     # return about, experience, project, skill, education, contact
+#     # return about
+#     return redirect ('/Denise')
 
 
 @app.route('/add_about', methods=['POST'])

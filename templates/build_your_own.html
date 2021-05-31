@@ -12,14 +12,16 @@
 <body>
 
     <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <input type="button" class="btn btn-outline-success" value="Dark Mode" onClick="darkMode()">
-                <input type="button" class="btn btn-outline-success" value="Light Mode" onClick="lightMode()"> 
-                <form action="/build" method="post">
-                    <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
-                </form> 
-            </div>
+        <form action="/" method="post">
+            <form class="form-inline">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <input type="button" class="btn btn-outline-success" value="Dark Mode" onClick="darkMode()">
+                    <input type="button" class="btn btn-outline-success" value="Light Mode" onClick="lightMode()"> 
+                    <!-- <form action="/" method="post"> -->
+                        <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
+                    <!-- </form>  -->
+                </div>
+            </form>
         </form>
     </nav>
 
@@ -150,16 +152,27 @@
 </div>
 
 
-<nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <form action="/submittion" method="post">
-                <button class="btn btn-secondary" id="submit-btn" type="submit">Submit</button>
-            </form>
-        </div>
+<nav class="navbar navbar-light bg-light"> 
+    <form action="/Denise" method="post">
+        <form class="form-inline">
+            <div class="btn-group" role="group" aria-label="Basic example"> 
+                <!-- <form action="/Denise" method="post"> -->
+                    <button class="btn btn-secondary" id="submit-btn" type="submit">Submit</button>
+                <!-- </form> -->
+            </div>
+        </form>
     </form>
 </nav>
 
+
+<!-- test -->
+<!-- <form action="/Denise" method="post">
+    <button class="btn btn-secondary" id="submit-btn" type="submit">Submit</button>
+</form> -->
+
+<!-- <form action="/" method="post">
+    <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
+</form>   -->
 
 </body>
 
