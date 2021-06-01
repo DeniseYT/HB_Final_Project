@@ -47,13 +47,18 @@
       }
 
       body {
-      background-color: #D3D3D3;
+      background-color: #E0DADA;
       
       }
 
+      /* h2 {
+      font-family: Arial;
+      } */
+
       h2, h3, h4, h5, h6 {
-      font-family: sans-serif;
+      font-family: Courier;
       }
+
   </style>
   </head>
 
@@ -64,15 +69,15 @@
       <h2>Create an Account</h2>
       
         <form action="/account" method="POST">
-          <p>
+          <h5>
             User <input type="text" name="username" required>
-          </p>
-          <p>
+          </h5>
+          <h5>
             Email <input type="text" name="email" required>
-          </p>
-          <p>
+          </h5>
+          <h5>
             Password <input type="password" name="password" required>
-          </p>
+          </h5>
 
           <button id="signup-btn" type="submit">Register</button>
           
@@ -83,13 +88,13 @@
       <h2>Login to your Account</h2>
 
         <form action="/login" method="POST">
-          <p>
+          <h5>
             Email <input type="text" name="email" value="" required>
-          </p>
+          </h5>
           
-          <p>
+          <h5>
             Password <input type="password" name="password" required>
-          </p>
+          </h5>
 
         <button id="login-btn" type="submit">Log In</button><br><br>
      

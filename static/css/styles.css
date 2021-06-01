@@ -134,18 +134,30 @@
 
 
 h1 {
-    font-family: sans-serif;
-    color:darkslategrey;
+    /* font-family: sans-serif; */
+    font-family: Arial;
+    /* color:darkslategrey; */
+    color:#262523;
   }
 
 h2, h3, h4, h5, h6 {
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
+    font-family: Courier;
+    /* color:darkslategrey; */
+    color:#262523;
 }
 
 
+
 body {
-    background-color: #D3D3D3;
-    
+    /* background-color: #D3D3D3;  */
+    background-color: #D9D4C5; 
+    /* background-color: #F2E2DF;  */
+    /* background-color: #E0DADA;  */
+    /* light grey
+    jeremy sand
+    light pink
+    purple pink */
   }
 
 

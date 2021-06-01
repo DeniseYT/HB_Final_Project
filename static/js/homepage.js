@@ -14,10 +14,10 @@ function incrementButton(id) {
 
 
 function darkMode() {
-    document.body.style.background="black";
+    document.body.style.background="#A6886D";
 }
 function lightMode() {
-    document.body.style.background="lightgrey";
+    document.body.style.background="#D9D4C5";
 }
 
 

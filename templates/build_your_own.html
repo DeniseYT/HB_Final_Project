@@ -17,28 +17,23 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <input type="button" class="btn btn-outline-success" value="Dark Mode" onClick="darkMode()">
                     <input type="button" class="btn btn-outline-success" value="Light Mode" onClick="lightMode()"> 
-                    <!-- <form action="/" method="post"> -->
                         <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
-                    <!-- </form>  -->
                 </div>
             </form>
         </form>
     </nav>
 
 
-
     <div class="container">
         <div class="row">
-            
                 <div class="maincontainer-left">
                     <h1 id="username">{{ session.get("user") }},</h1>
                     <h1> a web developer</h1>
                     <h1> and designer</h1>
                 </div>
-            
         </div>
-
 </div>
+
 
 <div class="container">
     <div class="maincontainer-top">
@@ -52,14 +47,20 @@
                         <div class="send-button">
                             <form action="/add_about" method="post">
                                 <text id="about-show"></text><br><br>
-                                <textarea id="about" type="text" name="about"></textarea><br>
+                                <textarea id="about" type="text" name="about"></textarea><br> 
                                 <button id="about-btn">Send</button><br><br>
-                                <!-- <button type="button" class="btn btn-primary">Send</button> -->
+
+                                <!-- <button type="button" class="btn btn-secondary">Send</button>  -->
                                 <!-- <nav class="navbar navbar-light bg-light">
-                                    <form class="form-inline">
-                                        <button class="btn btn-outline-success" type="button">Send</button><br><br>
-                                    </form> -->
-                                <!-- <text id="about-show"></text> -->
+                                    <form action="/add_about" method="post">
+                                        <form class="form-inline">
+                                            <text id="about-show"></text><br><br>
+                                            <textarea id="about" type="text" name="about"></textarea><br>
+                                            <button class="btn btn-outline-success" type="button">Send</button><br><br>
+                                        </form>
+                                    </form>
+                                </nav> -->
+                                
                             </form>
             
                         </div>
@@ -156,28 +157,16 @@
     <form action="/Denise" method="post">
         <form class="form-inline">
             <div class="btn-group" role="group" aria-label="Basic example"> 
-                <!-- <form action="/Denise" method="post"> -->
                     <button class="btn btn-secondary" id="submit-btn" type="submit">Submit</button>
-                <!-- </form> -->
             </div>
         </form>
     </form>
 </nav>
 
-
-<!-- test -->
-<!-- <form action="/Denise" method="post">
-    <button class="btn btn-secondary" id="submit-btn" type="submit">Submit</button>
-</form> -->
-
-<!-- <form action="/" method="post">
-    <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
-</form>   -->
+<script src="/static/js/ajax.js"></script>
 
 </body>
 
-
-<script src="/static/js/ajax.js"></script>
 
 {% endblock body%}
 
