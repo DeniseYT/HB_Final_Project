@@ -200,6 +200,13 @@ def add_comment():
     return comment
 
 
+# Testing page
+@app.route('/test')
+def test_page():
+
+    return render_template('test.html')
+
+
 
 if __name__ == '__main__':
     connect_to_db(app)
