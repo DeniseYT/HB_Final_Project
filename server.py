@@ -92,7 +92,7 @@ def user_login():
     if user and user.password == input_password:
         session['user'] = user.username # works
         session['user_id'] = user.user_id #show user_id
-        flash('Logged in.')
+        # flash('Logged in.')
         return redirect(f'/build/{user.username}')
 
     else:
@@ -201,10 +201,10 @@ def add_comment():
 
 
 # Testing page
-@app.route('/test')
-def test_page():
+# @app.route('/test')
+# def test_page():
 
-    return render_template('test.html')
+#     return render_template('test.html')
 
 
 

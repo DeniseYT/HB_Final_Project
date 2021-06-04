@@ -17,11 +17,12 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <input type="button" class="btn btn-outline-success" value="Dark Mode" onClick="darkMode()">
                     <input type="button" class="btn btn-outline-success" value="Light Mode" onClick="lightMode()"> 
-                        <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
+                    <button class="btn btn-secondary" id="logout-btn" type="submit">Log Out</button>
                 </div>
             </form>
         </form>
     </nav>
+
 
 
     <div class="container">
@@ -32,7 +33,7 @@
                     <h1> and designer</h1>
                 </div>
         </div>
-</div>
+    </div>
 
 
 <div class="container">
@@ -45,23 +46,30 @@
                 <div class="square" id="about-div" style="background-image: url(/static/img/photo-1609097164468-b498a4ab436a.jpeg")>
                     <h3>About</h3>
                         <div class="send-button">
-                            <form action="/add_about" method="post">
+                            <!-- <form action="/add_about" method="post">
                                 <text id="about-show"></text><br><br>
                                 <textarea id="about" type="text" name="about"></textarea><br> 
-                                <button id="about-btn">Send</button><br><br>
+                                <button id="about-btn">Send</button><br><br> -->
 
-                                <!-- <button type="button" class="btn btn-secondary">Send</button>  -->
-                                <!-- <nav class="navbar navbar-light bg-light">
+
+                                <nav class="navbar navbar-light bg-light">
+                                    <div class="send-button">
                                     <form action="/add_about" method="post">
                                         <form class="form-inline">
+                                            
                                             <text id="about-show"></text><br><br>
                                             <textarea id="about" type="text" name="about"></textarea><br>
-                                            <button class="btn btn-outline-success" type="button">Send</button><br><br>
+                                            
+                                            <button type="button" id="about-btn" class="btn btn-secondary ajax">Send</button> 
+                                            <script>
+                                                console.log("add inside")
+                                            </script>
                                         </form>
                                     </form>
-                                </nav> -->
+                                    </div>
+                                </nav>
                                 
-                            </form>
+                            <!-- </form> -->
             
                         </div>
                 </div>

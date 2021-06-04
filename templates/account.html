@@ -7,11 +7,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <!-- <meta name="google-signin-scope" content="profile email"> -->
     <meta name="google-signin-client_id" content="1028859467258-6ioql4vvepe23rpcicc6vq5so86vt7pf.apps.googleusercontent.com">
 
     <!-- old -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/styles.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
+    <!-- <link rel="stylesheet" href="/static/css/styles.css">  -->
 
     <!-- new -->
     <!-- <link 
@@ -34,6 +35,7 @@
 
     
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
       .account {
@@ -51,11 +53,11 @@
       
       }
 
-      /* h2 {
+      h2 {
       font-family: Arial;
-      } */
+      }
 
-      h2, h3, h4, h5, h6 {
+      h3, h4, h5, h6 {
       font-family: Courier;
       }
 
@@ -70,13 +72,13 @@
       
         <form action="/account" method="POST">
           <h5>
-            User <input type="text" name="username" required>
+            User <input type="text" name="username" placeholder="Username" required>
           </h5>
           <h5>
-            Email <input type="text" name="email" required>
+            Email <input type="text" name="email" placeholder="Email Address" required>
           </h5>
           <h5>
-            Password <input type="password" name="password" required>
+            Password <input type="password" name="password" placeholder="Password" required>
           </h5>
 
           <button id="signup-btn" type="submit">Register</button>
@@ -89,11 +91,11 @@
 
         <form action="/login" method="POST">
           <h5>
-            Email <input type="text" name="email" value="" required>
+            Email <input type="text" name="email" placeholder="Email Address" required>
           </h5>
           
           <h5>
-            Password <input type="password" name="password" required>
+            Password <input type="password" name="password" placeholder="Password" required>
           </h5>
 
         <button id="login-btn" type="submit">Log In</button><br><br>
@@ -115,8 +117,8 @@
       $.getScript('https://apis.google.com/js/platform.js');
   }) -->
 
-    </script>
-    <script>
+    <!-- </script> -->
+    <!-- <script>
       function onSignIn(googleUser) {
       // Useful data for your client-side scripts:
       var profile = googleUser.getBasicProfile();
@@ -129,7 +131,7 @@
       var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
-    </script>
+    </script> -->
 
     <!-- <a href="#" onclick="signOut();">Sign out</a> -->
 
