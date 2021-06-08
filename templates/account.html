@@ -48,14 +48,24 @@
           margin-left: -100px;
       }
 
+      /* .g-signin2 {
+        display: center;
+      } */
+
+      
+
       body {
       /* background-color: #E0DADA; */
       background-color: #D9D4C5; 
+      /* background-image: url(/static/img/photo-1616546311580-e191d49fa0b0.jpeg); */
       
       }
 
       h2 {
-      font-family: Arial;
+      /* font-family: Arial; */
+      /* font-family: Cambria; */
+      /* font-family: Lucida Sans; */
+      font-family: Garamond;
       }
 
       h3, h4, h5, h6 {
@@ -69,47 +79,59 @@
 
     <div class="account">
 
-      <h2>Create an Account</h2>
-      
-        <form action="/account" method="POST">
-          <h5>
-            User <input type="text" name="username" placeholder="Username" required>
-          </h5>
-          <h5>
-            Email <input type="text" name="email" placeholder="Email Address" required>
-          </h5>
-          <h5>
-            Password <input type="password" name="password" placeholder="Password" required>
-          </h5>
+        <h2>Create an Account</h2>
+        
+          <form action="/account" method="POST">
+              <h5>
+                User <input type="text" name="username" placeholder="Username" required>
+              </h5>
+              <h5>
+                Email <input type="text" name="email" placeholder="Email Address" required>
+              </h5>
+              <h5>
+                Password <input type="password" name="password" placeholder="Password" required>
+              </h5>
 
-          <button id="signup-btn" type="submit">Register</button>
-          
-          <!-- <div class="g-signin2" data-onsuccess="onSignUp"></div> -->
-        </form>
+              <button id="signup-btn" type="submit">Register</button><br><br>
+            
+          </form>
 
 
       <h2>Login to your Account</h2>
+      <!-- <h2>Gmail Log In</h2> -->
 
-        <form action="/login" method="POST">
-          <h5>
-            Email <input type="text" name="email" placeholder="Email Address" required>
-          </h5>
-          
-          <h5>
-            Password <input type="password" name="password" placeholder="Password" required>
-          </h5>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-        <button id="login-btn" type="submit">Log In</button><br><br>
+      <!-- <h2>Email Log In</h2> -->
+
+          <form action="/login" method="POST">
+              <h5>
+                Email <input type="text" name="email" placeholder="Email Address" required>
+              </h5>
+              
+              <h5>
+                Password <input type="password" name="password" placeholder="Password" required>
+              </h5>
+
+              <button id="login-btn" type="submit">Log In</button><br><br>
+
+          </form>
      
+    </div>
 
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+
 
       <!-- <div class="signup_link">
-        <a href="#">Sign Up</a>
+        <h4>Don't have an account?</h4>
+        <a href="http://0.0.0.0:5000/account">Join Now</a>
       </div> -->
       
-    </form>
-  </div>
+    
+  
+
+
+    
     
   
     <!--<div class="g-signin2" data-onsuccess="googleLogIn"></div> -->

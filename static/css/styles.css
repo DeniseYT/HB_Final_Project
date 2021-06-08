@@ -47,6 +47,28 @@
 }
 
 
+#login-div {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    border: 2px solid white;
+    /* text-align: left; */
+    /* background-image: url("/static/img"); */
+    /* background-color: */
+}
+
+#signup-div {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    border: 2px solid white;
+    /* text-align: left; */
+    /* background-image: url("/static/img"); */
+    /* background-color: */
+}
+
 #about-div {
     display: inline-block;
     width: 250px;
@@ -135,7 +157,9 @@
 
 h1 {
     /* font-family: sans-serif; */
-    font-family: Arial;
+    /* font-family: Arial; */
+    font-family: Cambria;
+    /* font-family: Garamond; */
     /* color:darkslategrey; */
     color:#262523;
   }

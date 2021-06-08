@@ -58,14 +58,14 @@ def register_users():
     password = request.form.get('password')
 
     if email in crud.get_all_emails():
-        flash('Email has already taken. Try again')
+        # flash('Email has already taken. Try again')
         return redirect('/account')
 
     else:
         crud.create_user(username, email, password)
         user = crud.get_user_by_username(username) 
         session['user'] = user.username
-        flash('Your account has been created.')
+        # flash('Your account has been created.')
         return redirect(f'/build/{user.username}')
 
 
@@ -74,9 +74,9 @@ def show_login():
 
     if session['user']:
         flash('You are already logged in')
-        return redirect('/build/')
+        return redirect('/build')
 
-    return render_template('account.html')
+    return render_template('login.html')
     
 
 
@@ -97,7 +97,7 @@ def user_login():
 
     else:
         flash('incorrect login')
-        return redirect('/account')
+        return redirect('/signup')
 
 
 @app.route('/logout')
