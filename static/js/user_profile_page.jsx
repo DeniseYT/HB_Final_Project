@@ -14,6 +14,11 @@ const userProfileData = [
   }
 ];
 
+const colorStyle = {
+  backgroundColor: "#A6886D"
+}
+
+
 function UserProfileAbout(props) {
   return (
     <div id="about-show">
@@ -61,6 +66,7 @@ function UserProfileContact(props) {
     </div>
   );
 }
+
 
 
 ReactDOM.render(
