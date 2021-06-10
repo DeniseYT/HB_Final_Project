@@ -92,7 +92,7 @@ $('#contact-div').on('submit', (evt) => {
 
 $('#comment-area').on('submit', (evt) => {
     evt.preventDefault();
-    alert('Handled with AJAX!');
+    alert('You are going to leave a message!');
 
     const addComment = {
         'comment': $('#comment-text').val()
