@@ -10,7 +10,7 @@ const userProfileData = [
     project: 'My personal project is to create an interactive, responsive, and modern display for people to share their story.',
     skill: 'JavaScript/jQuery, AJAX, React, HTML/Jinja, CSS/Bootstrap, Python/Flask, SQL/PostgreSQL, SQLAlchemy',
     education: 'Hackbright Academy - Software Engineering Program',
-    contact: 'Please leave me a message or connect at Linkedin!'
+    contact: 'Please leave me a message or connect at Linkedin & GitHub!'
   }
 ];
 
