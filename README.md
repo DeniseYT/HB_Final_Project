@@ -23,6 +23,7 @@ Python/Flask
 SQL/PostgreSQL
 SQLAlchemy ORM
 
+
 **APIs:**
 Gmail login API
 
@@ -37,7 +38,7 @@ Gmail login API
 ![app screenshot](/static/img/)
 
 # Future State
-This project will be continuing working on making contents permantly shown for people to share with someone else.
+I would like to create more customization options for everyone when building their own webpage, for example fonts, color arrangement, images and so on. Also the web app can be sharable to other social media in the future. 
 
 # Usage :desktop_computer:
 Requirements:
@@ -50,7 +51,7 @@ In terminal, run "python3 server.py" from root directory
 # About This Project & Author
 Built by [Denise Lin](https://github.com/DeniseYT). 
 
-Denise is linguist/localization-turned-software engineer and has continued to seek growth opportunities.   
+Background in Linguist/localization and transitioning into software engineering.
 
 Contact Denise on [LinkedIn](https://www.linkedin.com/in/denise-lin-7b0171117/)
 

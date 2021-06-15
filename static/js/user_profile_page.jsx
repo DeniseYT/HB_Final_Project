@@ -6,11 +6,11 @@ console.log("hi jsx is connecting")
 const userProfileData = [
   {
     about: 'I am a driven professional currently transitioning into full stack web development.',
-    experience: 'Background with Linguist/localization-turned-software engineer.',
-    project: 'My personal project is to create an interactive, responsive, and modern display for people to share their story.',
+    experience: 'Background in linguist/localization and transitioning into software engineering.',
+    project: 'My personal project is to create an interactive and modern personal website for everyone to share their story.',
     skill: 'JavaScript/jQuery, AJAX, React, HTML/Jinja, CSS/Bootstrap, Python/Flask, SQL/PostgreSQL, SQLAlchemy',
     education: 'Hackbright Academy - Software Engineering Program',
-    contact: 'Please leave me a message or connect at Linkedin & GitHub!'
+    contact: 'Please connect with me at Linkedin & GitHub'
   }
 ];
 
