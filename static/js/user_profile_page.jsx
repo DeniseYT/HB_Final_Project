@@ -5,8 +5,8 @@ console.log("hi jsx is connecting")
 
 const userProfileData = [
   {
-    about: 'I am a driven professional currently transitioning into full stack web development.',
-    experience: 'Background in linguist/localization and transitioning into software engineering.',
+    about: 'I am a driven professional currently transitioning into software engineering.',
+    experience: 'Linguist / localization specilist in Silicon Valley.',
     project: 'My personal project is to create an interactive and modern personal website for everyone to share their story.',
     skill: 'JavaScript/jQuery, AJAX, React, HTML/Jinja, CSS/Bootstrap, Python/Flask, SQL/PostgreSQL, SQLAlchemy',
     education: 'Hackbright Academy - Software Engineering Program',
@@ -30,7 +30,12 @@ function UserProfileAbout(props) {
 function UserProfileExperience(props) {
     return (
       <div id="experience-show">
-        <p>{userProfileData[0].experience}</p>
+        <p>{userProfileData[0].experience}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
       </div>
     );
   }
