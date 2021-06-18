@@ -30,10 +30,10 @@ Gmail login API
 # Video Demo
 
 # Webapp Pages
-![app screenshot](/static/img/Homepage)
-![app screenshot](/static/img/Account)
-![app screenshot](/static/img/Build)
-![app screenshot](/static/img/Portfolio_page)
+![app screenshot](/static/img/Homepage.png)
+![app screenshot](/static/img/Account.png)
+![app screenshot](/static/img/Build.png)
+![app screenshot](/static/img/Portfolio_page.png)
 
 
 # Future State
