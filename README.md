@@ -30,15 +30,14 @@ Gmail login API
 # Video Demo
 
 # Webapp Pages
-![app screenshot](/static/img/)
-![app screenshot](/static/img/)
-![app screenshot](/static/img/)
-![app screenshot](/static/img/)
-![app screenshot](/static/img/)
-![app screenshot](/static/img/)
+![app screenshot](/static/img/Homepage)
+![app screenshot](/static/img/Account)
+![app screenshot](/static/img/Build)
+![app screenshot](/static/img/Portfolio_page)
+
 
 # Future State
-I would like to create more customization options for everyone when building their own webpage, for example fonts, color arrangement, images and so on. Also the web app can be sharable to other social media in the future. 
+I would like to create more customization options for everyone when building their own webpage, for example fonts, color arrangement, images and so on. Also the web app can be shared to other social media in the future. 
 
 # Usage :desktop_computer:
 Requirements:
