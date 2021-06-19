@@ -46,7 +46,7 @@ In this building page, you fill out each column with your background story and c
 
 * Your Portfolio Page 
 
-![Image](/static/img/Portfolio_page.png)
+![Alt text](/static/img/Portfolio_page.png)
 
 
 
@@ -63,6 +63,7 @@ In terminal, run "python3 server.py" from root directory
 
 # About This Project & Author
 Built by [Denise Lin](https://github.com/DeniseYT). 
+
 Background in Linguist/localization and transitioning into software engineering.
 
 Contact Denise on [LinkedIn](https://www.linkedin.com/in/denise-lin-7b0171117/)
