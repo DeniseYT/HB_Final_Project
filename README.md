@@ -38,15 +38,15 @@ If you are interested in building your own portfolio, just click the below link,
 
 ![app screenshot](/static/img/Account.png)
 
-* Build Your Own One
+* Build Your Own Page
 
 In this building page, you fill out each column with your background story and choose the customization options. 
 
-![Image](/static/img/Build.png)
+![app screenshot](/static/img/Build.png)
 
 * Your Portfolio Page 
 
-![Alt text](/static/img/Portfolio_page.png)
+![app screenshot](/static/img/Portfolio_page.png)
 
 
 
@@ -64,7 +64,7 @@ In terminal, run "python3 server.py" from root directory
 # About This Project & Author
 Built by [Denise Lin](https://github.com/DeniseYT). 
 
-Background in Linguist/localization and transitioning into software engineering.
+Denise's background in Linguist/Localization Specilist in Silicon Valley and currently transitioning into software engineering.
 
 Contact Denise on [LinkedIn](https://www.linkedin.com/in/denise-lin-7b0171117/)
 
