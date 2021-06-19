@@ -1,39 +1,53 @@
 # Introduction
-
-This Personal Website is well-made for people who like to have an area to introduce their own personality besides resumes or Linkedin pages. 
+Looking for a job is the most common thing in the world! This personal website is created for everyone who likes to have an area to show their personalities other than formal resume or Linkedin. It can be everyone's portfolio, also it is in between social media and traditional job seeking templates with strong interactive mode with others. 
 
 # Features
-Users are able to fill in their own contents, including their background, experiences, skills, projects and so on.
+User can fill in their background story in 6 categories, *About*, *Experience*, *Skill*, *Project*, *Education* and *Contact*, choosing the customization options then build their own personal website. This website is also interactive with others by clicking likes and leaving comments.
 
-By filling out contents, the personal website is built.
 
-The personal website can be shared to others.
-
-When people/recruiters/future employer view the contents, they can also leave comments or click "like" button to have both interactive mode with each other.
 
 **Front end:** 
-JavaScript/jQuery
-AJAX
-React
-HTML/Jinja
-CSS/Bootstrap
+* JavaScript/jQuery
+* AJAX
+* React
+* HTML/Jinja
+* CSS/Bootstrap
 
 **Back end:** 
-Python/Flask
-SQL/PostgreSQL
-SQLAlchemy ORM
-
+* Python/Flask
+* SQL/PostgreSQL
+* SQLAlchemy ORM
 
 **APIs:**
-Gmail login API
+* Gmail login API
+
 
 # Video Demo
 
-# Webapp Pages
+
+# Webapp Pages Introduction
+* Landing Page
+
+This is the homepage, meaning this is someone’s portfolio which can be shared. This page allows you to interact with it by clicking likes or leaving comments. It is beneficial for job seekers to meet potential recruiters and employers.
+
 ![app screenshot](/static/img/Homepage.png)
+
+* Log In Page
+
+If you are interested in building your own portfolio, just click the below link, it leads you to log in to your account first. 
+
 ![app screenshot](/static/img/Account.png)
+
+* Build Your Own One
+
+In this building page, you fill out each column with your background story and choose the customization options. 
+
 ![app screenshot](/static/img/Build.png)
+
+* Your Portfolio Page 
+
 ![app screenshot](/static/img/Portfolio_page.png)
+
 
 
 # Future State
